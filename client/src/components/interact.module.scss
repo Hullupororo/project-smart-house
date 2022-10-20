@@ -1,0 +1,86 @@
+#drag1, #drag2 {
+    border: 2px solid white;
+    display: inline-block !important;
+    width: 100px;
+    height: 100px;
+    background-color: #29e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.75em;
+    touch-action: none;
+    user-select: none;
+    padding: 10px;
+    margin: 10px;
+    transform: translate(0px, 0px);
+  }
+  
+  .dragdropdemo {
+    border-radius: 0.75em;
+  }
+  
+  @mixin dropzone {
+    background-color: #bfe4ff;
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px 2px;
+    transition: background-color 0.3s;
+    color:black;
+    min-height: 200px;
+    border: 1px solid black;
+  }
+  
+  .dropzone {
+    @include dropzone;
+  }
+  
+  .dropzone1 {
+    @include dropzone;
+  }
+  
+  .dropzone2 {
+    @include dropzone;
+  }
+  
+  .dropactive {
+    border-color: #aaa;
+  }
+  
+  .dropped {
+    // background: red;
+  }
+  
+  .droptarget {
+    background-color: green;
+    border-color: #fff;
+    border-style: solid;
+  }
+  
+  .dragdrop {
+    line-height: 0.8em;
+    border-radius: 0.75em;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    padding: 10px;
+    margin: 1rem 0 0 1rem;
+    color: #fff;
+    background-color: #29e;
+    border: solid 2px #fff;
+    font-size: 10px;
+    touch-action: none;
+    transform: translate(0px, 0px);
+    transition: background-color 0.3s;
+  }
+  
+  #yesdrop {
+    border: 2px solid white;
+    // background: magenta;    
+  }
+  
+  .dragdrop.candrop {
+    color: #000;
+    background-color: #4e4 !important;
+  }

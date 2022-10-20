@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "interactjs": "^1.10.17",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1"
+  }
+}
