@@ -56,41 +56,6 @@ function useDraggable(
   }, []);
 }
 
-function DragDemo() {
-  const listeners = {
-    end(event) {
-      console.log('end', event);
-      const textEl = event.target.querySelector('p');
-      textEl
-        && (textEl.textContent = `I moved ${
-          Math.sqrt(
-            ((event.pageX - event.x0) ** 2
-              + (event.pageY - event.y0) ** 2)
-              | 0,
-          ).toFixed(2)
-        }px`);
-    },
-  };
-
-  useDraggable('.draggable', { listeners });
-
-  return (
-    <Hero className="height-md">
-      <h2>Draggable Elements</h2>
-      <p>
-        This example is from the official documentation - a draggable element
-        with a single listener which displays the pixels moved with each drag.
-      </p>
-      <div id={styles.drag1} className="draggable">
-        <p>Drag me 💨</p>
-      </div>
-      <div id={styles.drag2} className="draggable">
-        <p>drag me 💨</p>
-      </div>
-    </Hero>
-  );
-}
-
 const Droppable = memo(({ element, draggables }) => (
   <div id={element.id} className={`${styles.dropzone}`}>
     <p>
@@ -231,26 +196,26 @@ function DropZoneDemo() {
   const [leave, setLeave, leaveRef] = useStateRef(undefined);
   const [droppables, setDroppables, droppablesRef] = useStateRef([
     {
-      id: 'drop-1',
+      id: 'Room-1',
       children: [
         {
-          id: 'drop-2',
+          id: 'Room-2',
           children: [
             {
-              id: 'drop-3',
+              id: 'Room-3',
             },
           ],
         },
       ],
     },
-    { id: 'drop-4' },
-    { id: 'drop-5' },
+    { id: 'Room-4' },
+    { id: 'Room-5' },
   ]);
 
   const [draggables, setDraggables, draggablesRef] = useStateRef([
     // { id: "drag-1", draggable: false },
-    { id: 'drag-2', draggable: true },
-    { id: 'drag-3', draggable: true },
+    { id: 'device-2', draggable: true },
+    { id: 'device-3', draggable: true },
     // { id: "drag-4", draggable: true },
   ]);
 
@@ -361,7 +326,7 @@ function DropZoneDemo() {
     setOpen(false);
     setDraggables((draggables) => [
       ...draggables,
-      { id: `drag-${draggables.length + 2}`, draggable: true },
+      { id: `Device-${draggables.length + 2}`, draggable: true },
     ]);
   }
 
@@ -369,7 +334,7 @@ function DropZoneDemo() {
     setOpen(false);
     setDroppables((droppables) => [
       ...droppables,
-      { id: `drop-${Math.random().toString(36).substring(2, 5)}` },
+      { id: `Room-${Math.random().toString(36).substring(2, 5)}` },
     ]);
   }
 
@@ -388,9 +353,6 @@ function DropZoneDemo() {
           <Droppables elements={droppables} draggables={draggables} />
         </div>
       </EqualColumn>
-      <div>
-        <pre>{JSON.stringify(droppables, null, 2)}</pre>
-      </div>
     </>
   );
 }
@@ -398,7 +360,7 @@ export default function Interact() {
   return (
     <Content>
       <DropZoneDemo />
-      <DragDemo />
+      {/* <DragDemo /> */}
     </Content>
   );
 }

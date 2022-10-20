@@ -25,12 +25,7 @@ const draggableOptions = {
 
 export default function DragAndDrop() {
   return (
-    <div className="App">
-      <h2>Interactjs draggable groups demo</h2>
-      <p>Create new draggables and droppables and organise them freely</p>
-      <p>Drag items in, out and between groups</p>
-      <DraggableGroups />
-    </div>
+    <DraggableGroups />
 
   );
 }
