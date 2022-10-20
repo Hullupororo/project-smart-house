@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './index.css';
 import { Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 // import axios from 'axios';
@@ -9,8 +10,8 @@ import LocationPage from './Components/LocationPage/LocationPage';
 import AddDevicePage from './Components/AddDevicePage/AddDevicePage';
 import AddLocation from './Components/AddLocation/AddLocation';
 import ManageDevice from './Components/ManageDevice/ManageDevice';
-import SignUp from './Components/Auth/SignUp';
-import Login from './Components/Auth/Login';
+import SignUp from './Components/Auth/signup/SignUp';
+import Login from './Components/Auth/login/Login';
 import { userCheck } from './app/slices/userSlice';
 
 function App() {
