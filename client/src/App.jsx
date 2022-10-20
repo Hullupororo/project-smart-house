@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import axios from 'axios';
+// import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import MainPage from './Components/MainPage/MainPage';
 import MyNavBar from './Components/NavBar/MyNavBar';
@@ -20,21 +20,23 @@ function App() {
   }, []);
 
   return (
-    <Container>
-
+    <>
       <MyNavBar />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/user/registration" element={<SignUp />} />
-        <Route path="/user/authorization" element={<Login />} />
-        <Route path="/locations" element={<MainPage />} />
-        <Route path="/locations/:id" element={<LocationPage />} />
-        <Route path="/device/new" element={<AddDevicePage />} />
-        <Route path="/locations/new" element={<AddLocation />} />
-        <Route path="/device/edit" element={<ManageDevice />} />
+      <Container>
 
-      </Routes>
-    </Container>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/user/registration" element={<SignUp />} />
+          <Route path="/user/authorization" element={<Login />} />
+          <Route path="/locations" element={<MainPage />} />
+          <Route path="/locations/:id" element={<LocationPage />} />
+          <Route path="/device/new" element={<AddDevicePage />} />
+          <Route path="/locations/new" element={<AddLocation />} />
+          <Route path="/device/edit" element={<ManageDevice />} />
+
+        </Routes>
+      </Container>
+    </>
   );
 }
 
