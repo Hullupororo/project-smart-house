@@ -24,8 +24,8 @@ function MyNavBar() {
               )
               : (
                 <>
-                  <Nav className="pipe-separate t-light-green left"><NavLink className="nav-link" to="/auth/registration">Sign Up</NavLink></Nav>
-                  <Nav className="pipe-separate t-light-green left"><NavLink className="nav-link" to="/auth/authorization">Sign In</NavLink></Nav>
+                  <Nav className="pipe-separate t-light-green left"><NavLink className="nav-link" to="/user/registration">Sign Up</NavLink></Nav>
+                  <Nav className="pipe-separate t-light-green left"><NavLink className="nav-link" to="/user/authorization">Sign In</NavLink></Nav>
                 </>
               )}
           </Nav>
