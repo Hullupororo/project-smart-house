@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Location, {
         foreignKey: 'loc_id',
       });
-      this.hasMany(models.Devices, {
+      this.hasMany(models.Device, {
         foreignKey: 'room_id',
       });
     }
