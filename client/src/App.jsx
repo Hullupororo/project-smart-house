@@ -15,6 +15,7 @@ import Login from './Components/Auth/login/Login';
 import { userCheck } from './app/slices/userSlice';
 import GuestPage from './Components/GuestPage/GuestPage';
 import DragAndDrop from './components/DragAndDrop/DragAndDrop';
+import Animation from './Components/Animation/Animation';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function App() {
     <>
       <MyNavBar />
       <Container>
-
+      <Animation />
         <Routes>
           <Route path="/drag" element={<DragAndDrop />} />
         <Route path="/" element={<GuestPage />} />
@@ -37,7 +38,7 @@ function App() {
           <Route path="/device/new" element={<AddDevicePage />} />
           <Route path="/locations/new" element={<AddLocation />} />
           <Route path="/device/edit" element={<ManageDevice />} />
-
+        {/* <Route path="/animation" element={<Animation />} /> */}
         </Routes>
       </Container>
     </>
