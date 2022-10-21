@@ -4,8 +4,9 @@ const { User } = require('../db/models');
 
 const router = express.Router();
 
-router.post('/signup', async (req, res) => {
+router.post('/registration', async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(req.body);
   if (name && email && password) {
     try {
       const [user, created] = await User.findOrCreate({
@@ -27,7 +28,7 @@ router.post('/signup', async (req, res) => {
   return res.sendStatus(500);
 });
 
-router.post('/login', async (req, res) => {
+router.post('/authorization', async (req, res) => {
   const { email, password } = req.body;
   if (email && password) {
     try {
