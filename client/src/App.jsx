@@ -14,8 +14,9 @@ import SignUp from './Components/Auth/signup/SignUp';
 import Login from './Components/Auth/login/Login';
 import { userCheck } from './app/slices/userSlice';
 import GuestPage from './Components/GuestPage/GuestPage';
-import DragAndDrop from './Components/DragAndDrop/DragAndDrop';
+import DragAndDrop from './components/DragAndDrop/DragAndDrop';
 import Animation from './Components/Animation/Animation';
+import MyModal from './Components/MyModal/MyModal';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function App() {
     <>
       <MyNavBar />
       <Container>
-        <Animation />
+        {/* <Animation /> */}
         <Routes>
           <Route path="/drag" element={<DragAndDrop />} />
           <Route path="/" element={<GuestPage />} />

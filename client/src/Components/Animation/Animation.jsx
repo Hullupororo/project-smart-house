@@ -8,7 +8,7 @@ export default function Animation() {
     const newStaggerVisualizerEl = document.querySelector('.stagger-visualizer');
     setstaggerVisualizerEl(newStaggerVisualizerEl);
   }, []);
-  console.log('-------', staggerVisualizerEl);
+
   const fragment = document.createDocumentFragment();
   const numberOfElements = 81;
 
@@ -70,35 +70,36 @@ export default function Animation() {
       scale: 1,
       delay: anime.stagger(50, { from: 'center', grid: [9, 9] }),
     })
-    .add({
-      translateX: 0,
-      translateY: anime.stagger(6, { from: 'center', direction: 'reverse' }),
-      rotate: 0,
-      delay: anime.stagger(50, { from: 'center', grid: [9, 9] }),
-    })
-    .add({
-      translateX: anime.stagger('1rem', { grid: [9, 9], from: 'center', axis: 'x' }),
-      // translateY: anime.stagger('1rem', {grid: [9, 9], from: 'center', axis: 'y'}),
-      delay: anime.stagger(200, { grid: [9, 9], from: 'center', direction: 'reverse' }),
-    })
-    .add({
-      translateX: anime.stagger([25, -25], { from: 'first' }),
-      translateY: 0,
-      rotate: anime.stagger([40, -40], { from: 'first' }),
-      delay: anime.stagger(10, { from: 'first' }),
-    })
-    .add({
-      translateY: anime.stagger([-240, 240]),
-      rotate: () => anime.random(-100, 100),
-      scale: anime.stagger([1, 3], { from: 'center' }),
-      delay: anime.stagger(10, { from: 0 }),
-    })
+    // .add({
+    //   translateX: 0,
+    //   translateY: anime.stagger(6, { from: 'center', direction: 'reverse' }),
+    //   rotate: 0,
+    //   delay: anime.stagger(50, { from: 'center', grid: [9, 9] }),
+    // })
+    // .add({
+    //   translateX: anime.stagger('1rem', { grid: [9, 9], from: 'center', axis: 'x' }),
+    //   // translateY: anime.stagger('1rem', {grid: [9, 9], from: 'center', axis: 'y'}),
+    //   delay: anime.stagger(200, { grid: [9, 9], from: 'center', direction: 'reverse' }),
+    //   duration: 500,
+    // })
+    // .add({
+    //   translateX: anime.stagger([25, -25], { from: 'first' }),
+    //   translateY: 0,
+    //   rotate: anime.stagger([40, -40], { from: 'first' }),
+    //   delay: anime.stagger(10, { from: 'first' }),
+    // })
+    // .add({
+    //   translateY: anime.stagger([-240, 240]),
+    //   rotate: () => anime.random(-100, 100),
+    //   scale: anime.stagger([1, 3], { from: 'center' }),
+    //   delay: anime.stagger(10, { from: 0 }),
+    // })
     .add({
       translateX: 0,
       translateY: 0,
       scale: 1,
-      rotate: 360,
-      duration: 2000,
+      rotate: 180,
+      duration: 1000,
       delay: 0,
     });
 
