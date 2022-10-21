@@ -16,6 +16,7 @@ import { userCheck } from './app/slices/userSlice';
 import GuestPage from './Components/GuestPage/GuestPage';
 import DragAndDrop from './Components/DragAndDrop/DragAndDrop';
 import Animation from './Components/Animation/Animation';
+import MyModal from './Components/MyModal/MyModal';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -28,7 +29,7 @@ function App() {
     <>
       <MyNavBar />
       <Container>
-        {!user?.id && <Animation />}
+        {/* <Animation /> */}
         <Routes>
           <Route path="/drag" element={<DragAndDrop />} />
           <Route path="/" element={<GuestPage />} />
