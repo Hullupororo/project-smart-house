@@ -1,4 +1,4 @@
-*,
+/* /* *,
 ::after,
 ::before {
   box-sizing: border-box;
@@ -9,15 +9,15 @@ body {
   color: rgb(0, 0, 0);
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0.05em;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: 23px;
   font-family: "Montserrat", sans-serif;
 
-}
+} */
 
-.form {
+/* .form {
   width: 300px;
   padding: 64px 15px 24px;
   margin: 0 auto;
@@ -153,9 +153,9 @@ h1 {
 }
 .credits a:hover {
   opacity: 1;
-}
-/* 
-.form__group {
+} */
+
+/* .form__group {
   position: relative;
   padding: 15px 0 0;
   margin-top: 10px;
@@ -210,7 +210,7 @@ h1 {
 }
 
 /* reset input */
-.form__field:required, .form__field:invalid {
+/* .form__field:required, .form__field:invalid {
   box-shadow: none;
 }
 
@@ -224,4 +224,82 @@ h1 {
   min-height: 100vh;
   font-size: 1.5rem;
   background-color: #222222;
-} */ 
+}   */
+
+.main {
+/* width: 100%; */
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.form__field {
+  /* font-family: inherit; */
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: rgb(0, 0, 0);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to left, #f8f3da, #fddb3a);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #e4ca49;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+/* demo */
+body {
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Montserrat", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #222222;
+}
