@@ -1,37 +1,51 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import {
-  Nav, Navbar, Button, Container,
-} from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import './MyNavBar.css';
+import { userLogout } from '../../app/slices/userSlice';
 
 function MyNavBar() {
   const user = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+  const logoutHandler = (e) => {
+    e.preventDefault();
+    dispatch(userLogout());
+  };
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            {user?.id
-              ? (
-                <Nav className="pipe-separate mgL t-light-green left">
-                  <Button className="nav-link" variant="link">
-                    Logout
-                  </Button>
-                </Nav>
-              )
-              : (
-                <>
-                  <Nav className="pipe-separate t-light-green left"><NavLink className="nav-link" to="/user/registration">Sign Up</NavLink></Nav>
-                  <Nav className="pipe-separate t-light-green left"><NavLink className="nav-link" to="/user/authorization">Sign In</NavLink></Nav>
-                </>
-              )}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <div className="bar">
+      <nav className="navMenu">
+        {user?.id ? (
+
+          <>
+            <div className="title">
+              <Link to="/">smarthouse</Link>
+            </div>
+            <div className="title">
+              <Link to="/">device</Link>
+            </div>
+            <div className="title">
+              <Link to="/">Home</Link>
+            </div>
+            <div className="title">
+              <Link to="/" onClick={logoutHandler}>logout</Link>
+            </div>
+          </>
+        )
+          : (
+            <>
+              <div className="title titlePro">
+                <Link to="/user/authorization">sign in</Link>
+              </div>
+              <div className="title titlePro">
+                <Link to="/user/registration">sign up</Link>
+              </div>
+            </>
+
+          )}
+        <div className={`dot ${user?.id ? null : 'dotPro'}`} />
+      </nav>
+    </div>
   );
 }
 
