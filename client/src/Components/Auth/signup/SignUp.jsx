@@ -86,78 +86,26 @@ export default function SignUp() {
       </button>
 
     </form>
+  // <div className="main">
+  //   <div className="form__group field">
+  //     <input type="input" className="form__field" placeholder="Name" name="name" />
+  //     <label className="form__label">Name</label>
+  //   </div>
+  //   <div className="form__group field">
+  //     <input type="input" className="form__field" placeholder="Email" name="email" />
+  //     <label className="form__label">Email</label>
+  //   </div>
+  //   <div className="form__group field">
+  //     <input type="input" className="form__field" placeholder="Password" name="password" />
+  //     <label className="form__label">Password</label>
+  //   </div>
+  //   <button
+  //     type="button"
+  //     className="button-54"
+  //   >
+  //     Sign Up
 
+  //   </button>
+  // </div>
   );
 }
-
-// <ThemeProvider theme={theme}>
-//   <Container component="main" maxWidth="xs">
-//     <CssBaseline />
-//     <Box
-//       sx={{
-//         marginTop: 8,
-//         display: 'flex',
-//         flexDirection: 'column',
-//         alignItems: 'center',
-//       }}
-//     >
-//       <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} />
-//       <Typography component="h1" variant="h5">
-//         Sign up
-//       </Typography>
-//       <Box component="form" noValidate onSubmit={submitHandler} sx={{ mt: 3 }}>
-//         <Grid container spacing={2}>
-//           <Grid item xs={12}>
-//             <TextField
-//               autoComplete="given-name"
-//               name="name"
-//               required
-//               fullWidth
-//               id="name"
-//               label="Name"
-//               autoFocus
-//             />
-//           </Grid>
-
-//           <Grid item xs={12}>
-//             <TextField
-//               required
-//               fullWidth
-//               id="email"
-//               label="Email Address"
-//               name="email"
-//               autoComplete="email"
-//             />
-//           </Grid>
-//           <Grid item xs={12}>
-//             <TextField
-//               required
-//               fullWidth
-//               name="password"
-//               label="Password"
-//               type="password"
-//               id="password"
-//               autoComplete="new-password"
-//             />
-//           </Grid>
-
-//         </Grid>
-//         <Button
-//           type="submit"
-//           fullWidth
-//           variant="contained"
-//           sx={{ mt: 3, mb: 2 }}
-//         >
-//           Sign Up
-//         </Button>
-//         <Grid container justifyContent="flex-end">
-//           <Grid item>
-//             <Link to="/user/authorization" variant="body2">
-//               Already have an account? Sign in
-//             </Link>
-//           </Grid>
-//         </Grid>
-//       </Box>
-//     </Box>
-//   </Container>
-// </ThemeProvider>

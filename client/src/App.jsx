@@ -13,6 +13,7 @@ import ManageDevice from './Components/ManageDevice/ManageDevice';
 import SignUp from './Components/Auth/signup/SignUp';
 import Login from './Components/Auth/login/Login';
 import { userCheck } from './app/slices/userSlice';
+import GuestPage from './Components/GuestPage/GuestPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function App() {
       <Container>
 
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<GuestPage />} />
           <Route path="/user/registration" element={<SignUp />} />
           <Route path="/user/authorization" element={<Login />} />
           <Route path="/locations" element={<MainPage />} />
