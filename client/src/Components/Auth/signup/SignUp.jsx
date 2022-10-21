@@ -74,25 +74,27 @@ export default function SignUp() {
   //   </button>
 
     // </form>
-    <form onSubmit={submitHandler} className="main">
-      <div className="form__group field">
-        <input type="name" className="form__field" placeholder="Name" name="name" />
-        <label htmlFor="name" className="form__label">Name</label>
-      </div>
-      <div className="form__group field">
-        <input type="email" className="form__field" placeholder="Email" name="email" />
-        <label htmlFor="name" className="form__label">Email</label>
-      </div>
-      <div className="form__group field">
-        <input type="password" className="form__field" placeholder="Password" name="password" />
-        <label htmlFor="name" className="form__label">Password</label>
-      </div>
-      <button
-        type="submit"
-        className="button-54"
-      >
-        Sign Up
-      </button>
-    </form>
+    <div className="form-containerPro">
+      <form onSubmit={submitHandler} className="main">
+        <div className="form__group field">
+          <input type="name" className="form__field" placeholder="Name" name="name" />
+          <label htmlFor="name" className="form__label">Name</label>
+        </div>
+        <div className="form__group field">
+          <input type="email" className="form__field" placeholder="Email" name="email" />
+          <label htmlFor="name" className="form__label">Email</label>
+        </div>
+        <div className="form__group field">
+          <input type="password" className="form__field" placeholder="Password" name="password" />
+          <label htmlFor="name" className="form__label">Password</label>
+        </div>
+        <button
+          type="submit"
+          className="button-54 button-54Pro"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
   );
 }

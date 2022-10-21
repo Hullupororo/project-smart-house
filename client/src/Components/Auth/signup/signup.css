@@ -226,9 +226,6 @@ body {
   background-color: #222222;
 }   */
 
-.main {
-/* width: 100%; */
-}
 
 .form__group {
   position: relative;
@@ -257,6 +254,17 @@ body {
   font-size: 1.3rem;
   cursor: text;
   top: 20px;
+}
+/* .form-containerPro {
+  width: 90%;
+  margin-left: 30%;
+} */
+
+.main {
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10%;
+  
 }
 
 .form__label {
@@ -302,4 +310,8 @@ body {
   min-height: 100vh;
   font-size: 1.5rem;
   background-color: #222222;
+}
+
+.button-54Pro {
+margin-top: 5%;
 }

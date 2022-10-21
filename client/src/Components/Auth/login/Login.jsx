@@ -25,7 +25,7 @@ export default function Login() {
       </div>
       <button
         type="submit"
-        className="button-54"
+        className="button-54 button-54Pro"
         // onClick={handleLogin}
       >
         Sign In
