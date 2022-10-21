@@ -26,6 +26,5 @@ const draggableOptions = {
 export default function DragAndDrop() {
   return (
     <DraggableGroups />
-
   );
 }
