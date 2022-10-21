@@ -14,6 +14,7 @@ import SignUp from './Components/Auth/signup/SignUp';
 import Login from './Components/Auth/login/Login';
 import { userCheck } from './app/slices/userSlice';
 import GuestPage from './Components/GuestPage/GuestPage';
+import DragAndDrop from './components/DragAndDrop/DragAndDrop';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +28,8 @@ function App() {
       <Container>
 
         <Routes>
-          <Route path="/" element={<GuestPage />} />
+          <Route path="/drag" element={<DragAndDrop />} />
+        <Route path="/" element={<GuestPage />} />
           <Route path="/user/registration" element={<SignUp />} />
           <Route path="/user/authorization" element={<Login />} />
           <Route path="/locations" element={<MainPage />} />
