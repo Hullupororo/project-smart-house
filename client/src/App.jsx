@@ -28,7 +28,7 @@ function App() {
     <>
       <MyNavBar />
       <Container>
-        <Animation />
+        {/* <Animation /> */}
         <Routes>
           <Route path="/drag" element={<DragAndDrop />} />
           <Route path="/" element={<GuestPage />} />

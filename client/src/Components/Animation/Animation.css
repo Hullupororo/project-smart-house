@@ -11,18 +11,22 @@ html{
 }
 
 .stagger-visualizer {
+  position: fixed;
+  display: block;
+  padding-top: 250px;
   display: flex;
+  left: 25%;
   /*flex-wrap: wrap;*/
   justify-content: center;
   align-items: center;
-  width: 450px;
-  height: 450px;
+  width: 50%;
+  height: 650px;
 }
 
 .stagger-visualizer div {
   /*position: absolute;*/
-  width: 64px;
-  height: 128px;
+  width: 8px;
+  height: 228px;
   border: 1px solid #373535;
   background-color: #ffffff;
 }

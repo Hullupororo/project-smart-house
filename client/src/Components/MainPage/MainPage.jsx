@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
 import { setModal } from '../../app/slices/modalSlice';
 import MyModal from '../MyModal/MyModal';
 
@@ -8,6 +9,7 @@ export default function MainPage() {
   const arr = [{ id: 1, title: 'home' }, { id: 2, title: 'office' }];
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const addLoc = () => {
     navigate('/locations/new');
   };
