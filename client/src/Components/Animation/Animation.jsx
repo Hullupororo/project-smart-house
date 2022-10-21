@@ -12,6 +12,7 @@ export default function Animation() {
   const fragment = document.createDocumentFragment();
   const numberOfElements = 81;
 
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < numberOfElements; i++) {
     fragment.appendChild(document.createElement('div'));
   }
