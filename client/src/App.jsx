@@ -3,7 +3,7 @@ import './index.css';
 import { Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 // import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import MainPage from './Components/MainPage/MainPage';
 import MyNavBar from './Components/NavBar/MyNavBar';
 import LocationPage from './Components/LocationPage/LocationPage';
@@ -18,6 +18,7 @@ import DragAndDrop from './Components/DragAndDrop/DragAndDrop';
 import Animation from './Components/Animation/Animation';
 
 function App() {
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userCheck());
@@ -27,7 +28,7 @@ function App() {
     <>
       <MyNavBar />
       <Container>
-        <Animation />
+        {!user?.id && <Animation />}
         <Routes>
           <Route path="/drag" element={<DragAndDrop />} />
           <Route path="/" element={<GuestPage />} />
