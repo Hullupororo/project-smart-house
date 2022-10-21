@@ -14,7 +14,7 @@ import SignUp from './Components/Auth/signup/SignUp';
 import Login from './Components/Auth/login/Login';
 import { userCheck } from './app/slices/userSlice';
 import GuestPage from './Components/GuestPage/GuestPage';
-import DragAndDrop from './Components/DragAndDrop/DragAndDrop';
+import DragAndDrop from './components/DragAndDrop/DragAndDrop';
 import Animation from './Components/Animation/Animation';
 
 function App() {
