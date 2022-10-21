@@ -12,6 +12,7 @@ import ManageDevice from './Components/ManageDevice/ManageDevice';
 import SignUp from './Components/Auth/SignUp';
 import Login from './Components/Auth/Login';
 import { userCheck } from './app/slices/userSlice';
+import Animation from './Components/Animation/Animation';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <Container>
-
+      <Animation />
       <MyNavBar />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -32,7 +33,7 @@ function App() {
         <Route path="/device/new" element={<AddDevicePage />} />
         <Route path="/locations/new" element={<AddLocation />} />
         <Route path="/device/edit" element={<ManageDevice />} />
-
+        {/* <Route path="/animation" element={<Animation />} /> */}
       </Routes>
     </Container>
   );
