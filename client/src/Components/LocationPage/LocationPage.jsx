@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function LocationPage() {
   return (
-    <div>LocationPage</div>
+    <div className="form__group field" />
   );
 }

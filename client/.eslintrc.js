@@ -19,5 +19,6 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 0,
     'no-unused-vars': 0,
+    'jsx-a11y/label-has-associated-control': 0,
   },
 };
