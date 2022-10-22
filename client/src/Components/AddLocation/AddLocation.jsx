@@ -1,5 +1,5 @@
 import React from 'react';
-import DragAndDrop from '../../components/DragAndDrop/DragAndDrop';
+import DragAndDrop from '../DragAndDrop/DragAndDrop';
 
 export default function AddLocation() {
   return (
@@ -8,6 +8,7 @@ export default function AddLocation() {
         <input type="text" className="form__field" placeholder="New Location" name="title" />
         <label htmlFor="name" className="form__label">New Location</label>
       </div>
+      <div />
       <DragAndDrop />
     </div>
   );

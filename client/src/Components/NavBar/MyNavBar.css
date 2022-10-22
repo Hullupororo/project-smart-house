@@ -116,7 +116,7 @@ body {
 
 .navMenu .title:nth-child(1):hover ~ .dotPro {
   -webkit-transform: translateX(30px);
-  transform: translateX(10rem);
+  transform: translateX(9.3rem);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
@@ -124,7 +124,7 @@ body {
 
 .navMenu  .title:nth-child(2):hover ~ .dotPro {
   -webkit-transform: translateX(110px);
-  transform: translateX(26.4rem);
+  transform: translateX(24.6rem);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;

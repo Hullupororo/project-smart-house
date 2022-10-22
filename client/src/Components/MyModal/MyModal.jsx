@@ -9,7 +9,7 @@ export default function MyModal() {
   const modal = useSelector((state) => state.modal);
   return (
     <div id="modal">
-      <p className="message">Are you sure you want to delete this?</p>
+      <p className="message">Are you sure you want to delete this location?</p>
       <div className="options">
         <button type="button" className="btn1" onClick={() => dispatch(setModal(null))}>Close</button>
         <button type="button" className="btn1" onClick={() => dispatch(setModal(null))}>Delete</button>
