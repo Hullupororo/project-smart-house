@@ -4,11 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { setModal } from '../../app/slices/modalSlice';
 import MyModal from '../MyModal/MyModal';
+import { getLoc } from '../../app/slices/locSlice';
+import OneLocation from './OneLocation';
+// import './oneLocation.css';
 
 export default function MainPage() {
-  const arr = [{ id: 1, title: 'home' }, { id: 2, title: 'office' }];
+  const location = useSelector((state) => state.loc);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(getLoc());
+  }, []);
 
   const addLoc = () => {
     navigate('/locations/new');
@@ -19,18 +26,16 @@ export default function MainPage() {
   const modal = useSelector((state) => state.modal);
   return (
     <>
-      <div>MainPage</div>
-      <button type="button" onClick={addLoc}>add location</button>
-      {arr.map((loc) => (
-        <div>
-          <Link to={`/locations/${loc.id}`}>
-            {loc.title}
-          </Link>
-          <button type="button" onClick={() => modalHandler(loc)}>delete</button>
-        </div>
-      ))}
-      {modal
+      <div>
+        <button type="button" onClick={addLoc}>Add location</button>
+      </div>
+      <div className="cards">
+        {location.map((loc) => (
+          <OneLocation key={loc.id} loc={loc} />
+        ))}
+        {modal
       && <MyModal />}
+      </div>
     </>
   );
 }

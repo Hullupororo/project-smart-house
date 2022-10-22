@@ -16,7 +16,7 @@ export default function SignUp() {
 
   return (
     <div className="form-containerPro">
-      <form onSubmit={submitHandler} className="main">
+      <form onSubmit={submitHandler} className="main main-signup">
         <div className="form__group field">
           <input type="name" className="form__field" placeholder="Name" name="name" />
           <label htmlFor="name" className="form__label">Name</label>

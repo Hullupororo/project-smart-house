@@ -17,7 +17,7 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleLogin} className="main">
+    <form onSubmit={handleLogin} className="main main-login">
       <div className="form__group field">
         <input type="email" className="form__field" placeholder="Email" name="email" />
         <label htmlFor="name" className="form__label">Email</label>

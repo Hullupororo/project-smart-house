@@ -13,7 +13,7 @@ html{
 .stagger-visualizer {
   position: fixed;
   display: block;
-  padding-top: 250px;
+  padding-top: 230px;
   display: flex;
   left: 25%;
   /*flex-wrap: wrap;*/

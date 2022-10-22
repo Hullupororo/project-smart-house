@@ -1,3 +1,14 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+/* eslint-disable no-param-reassign */
+/* eslint-disable prefer-const */
+/* eslint-disable react/button-has-type */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-console */
+/* eslint-disable no-shadow */
+/* eslint-disable no-use-before-define */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/prop-types */
 import interact from 'interactjs';
 import React, {
   cloneElement, useState, useEffect, memo,
