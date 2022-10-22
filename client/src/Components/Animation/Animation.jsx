@@ -14,10 +14,11 @@ export default function Animation() {
 
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < numberOfElements; i++) {
+    // console.log('-----', staggerVisualizerEl.length);
     fragment.appendChild(document.createElement('div'));
   }
   if (staggerVisualizerEl) {
-    staggerVisualizerEl.appendChild(fragment);
+    if (document.getElementsByClassName('stagger-visualizer')[0].children.length < 81) { staggerVisualizerEl.appendChild(fragment); }
   }
 
   const staggersAnimation = anime.timeline({
