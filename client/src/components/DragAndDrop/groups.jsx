@@ -3,8 +3,10 @@ import React, {
   cloneElement, useState, useEffect, memo,
 } from 'react';
 import useStateRef from 'react-usestateref';
+import TestCard from './TestCard/TestCard';
 
 import styles from './interact.module.scss';
+import styles2 from './interact.module copy.scss';
 
 function Hero({ children }) {
   return <div>{children}</div>;
@@ -87,16 +89,33 @@ const Droppables = memo(({ elements, draggables }) => (
 ));
 
 const Draggable = memo(({ id, draggable, parent }) => (
-  <div
-    key={Math.random()}
-    id={id}
-    className={`flex center column ${styles.dragdrop} ${
-      draggable ? styles.yesdrop : styles.nodrop
-    }`}
-  >
-    <p>{id}</p>
-    <p>{draggable ? '✔️' : '❌'}</p>
-    <p>{parent && parent}</p>
+  <div>
+    {/* {parent && (
+    <TestCard
+      id={id}
+      dragClass={`flex center column ${styles.dragdrop} ${
+        draggable ? styles.yesdrop : styles.nodrop
+      }`}
+    />
+    )} */}
+    {/* {!parent && ( */}
+
+    <div
+      key={Math.random()}
+      id={id}
+      className={`flex center column ${parent ? styles2.dragdrop : styles.dragdrop} ${
+        draggable ? styles.yesdrop : styles.nodrop
+      }`}
+    >
+
+      <p>{id}</p>
+      <p>{parent && parent}</p>
+      {parent && (
+      <TestCard />
+      )}
+    </div>
+    {/* )} */}
+
   </div>
 ));
 
@@ -195,19 +214,19 @@ function DropZoneDemo() {
   const [open, setOpen] = useState(false);
   const [leave, setLeave, leaveRef] = useStateRef(undefined);
   const [droppables, setDroppables, droppablesRef] = useStateRef([
-    {
-      id: 'Room-1',
-      children: [
-        {
-          id: 'Room-2',
-          children: [
-            {
-              id: 'Room-3',
-            },
-          ],
-        },
-      ],
-    },
+    // {
+    //   id: 'Room-1',
+    //   children: [
+    //     {
+    //       id: 'Room-2',
+    //       children: [
+    //         {
+    //           id: 'Room-3',
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
     { id: 'Room-4' },
     { id: 'Room-5' },
   ]);
@@ -221,6 +240,7 @@ function DropZoneDemo() {
 
   useDropZone(`.${styles.dropzone}`, onDrop, onLeave, onEnter, onDeactivate);
   useDraggable(`.${styles.dragdrop}`, { restriction: 'none' });
+  useDraggable(`.${styles2.dragdrop}`, { restriction: 'none' });
 
   // useEffect(()=>{
   //     console.log("leave", leave)
@@ -274,19 +294,10 @@ function DropZoneDemo() {
   }
 
   function onLeave(e) {
-    // console.log("onLeave", e);
+    console.log('onLeave', e);
+    console.log(draggables);
     setLeave(e.droppable);
   }
-
-  // function onDrop(e) {
-  //     console.log("onDrop", e)
-  //     let drag = draggablesRef.current.find(item => item.id == e.draggable);
-  //     if (drag) {
-  //         drag.timestamp = Date.now();
-  //         drag.parent = e.droppable;
-  //         setDraggables([...draggablesRef.current]);
-  //     }
-  // }
 
   function onDrop(e) {
     console.log('onDrop', e);

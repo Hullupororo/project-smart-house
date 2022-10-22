@@ -27,10 +27,9 @@ function App() {
     <>
       <MyNavBar />
       <Container>
-      <Animation />
         <Routes>
           <Route path="/drag" element={<DragAndDrop />} />
-        <Route path="/" element={<GuestPage />} />
+          <Route path="/" element={<GuestPage />} />
           <Route path="/user/registration" element={<SignUp />} />
           <Route path="/user/authorization" element={<Login />} />
           <Route path="/locations" element={<MainPage />} />
@@ -38,7 +37,7 @@ function App() {
           <Route path="/device/new" element={<AddDevicePage />} />
           <Route path="/locations/new" element={<AddLocation />} />
           <Route path="/device/edit" element={<ManageDevice />} />
-        {/* <Route path="/animation" element={<Animation />} /> */}
+          {/* <Route path="/animation" element={<Animation />} /> */}
         </Routes>
       </Container>
     </>
