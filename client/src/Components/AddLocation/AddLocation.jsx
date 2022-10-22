@@ -1,6 +1,7 @@
 import React from 'react';
 import DragAndDrop from '../DragAndDrop/DragAndDrop';
 
+// jcef
 export default function AddLocation() {
   return (
     <div>
