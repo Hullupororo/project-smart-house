@@ -3,6 +3,7 @@ import React, {
   cloneElement, useState, useEffect, memo,
 } from 'react';
 import useStateRef from 'react-usestateref';
+import BsLightbulb from 'react-icons/bs';
 import TestCard from './TestCard/TestCard';
 
 import styles from './interact.module.scss';
