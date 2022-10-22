@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +24,13 @@ export default function LocationPage() {
       <div className="sidebar">
         {rooms?.map((room) => (
           <div className="link">
-            <div className="text" onClick={() => deviceHandler(room.id)}>{room.title}</div>
+            <div
+              className="text"
+              onClick={() => deviceHandler(room.id)}
+            >
+              {room.title}
+
+            </div>
           </div>
         ))}
       </div>

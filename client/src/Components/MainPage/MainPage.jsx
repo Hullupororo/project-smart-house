@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import { Container } from 'react-bootstrap';
 import { setModal } from '../../app/slices/modalSlice';
 import MyModal from '../MyModal/MyModal';
 import { getLoc } from '../../app/slices/locSlice';
 import OneLocation from './OneLocation';
 import MyMap from '../Map/MyMap';
-// import './oneLocation.css';
+import './oneLocation.css';
 
 export default function MainPage() {
   const location = useSelector((state) => state.loc);
@@ -27,11 +28,10 @@ export default function MainPage() {
   const modal = useSelector((state) => state.modal);
 
   return (
-    <>
-      <div>
-        <button type="button" onClick={addLoc}>Add location</button>
-      </div>
+    <Container className="newClassDasha">
+
       <div className="cards">
+        <button className="button-54 button-54ProMaxGenius" type="button" onClick={addLoc}>Add location</button>
         {location.map((loc) => (
           <OneLocation key={loc.id} loc={loc} />
         ))}
@@ -39,6 +39,7 @@ export default function MainPage() {
       </div>
       <MyMap />
 
-    </>
+    </Container>
+
   );
 }

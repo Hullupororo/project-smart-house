@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 
 export default function OneLocation({ loc }) {
   return (
-    <div className="container">
+    <div className="cardLocation" style={{ width: '40%' }}>
 
-      <div className="card">
+      <div className="card2">
         <div className="box">
           <div className="content">
 
-            <h3>{loc.title}</h3>
+            <h3 className="locText">{loc.title}</h3>
 
             <a href={`/locations/${loc.id}`}>Read More</a>
           </div>
