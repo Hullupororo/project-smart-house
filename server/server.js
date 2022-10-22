@@ -8,7 +8,6 @@ const userRouter = require('./routes/userRouter');
 const locationRouter = require('./routes/locationRouter');
 const deviceRouter = require('./routes/deviceRouter');
 
-
 require('dotenv').config();
 
 const app = express();
@@ -38,6 +37,5 @@ app.use('/user', userRouter);
 app.use('/', locationRouter);
 
 app.use('/device', deviceRouter);
-
 
 app.listen(PORT, console.log(`SERVER STARTED ON ${PORT}`));
