@@ -6,6 +6,7 @@ import { setModal } from '../../app/slices/modalSlice';
 import MyModal from '../MyModal/MyModal';
 import { getLoc } from '../../app/slices/locSlice';
 import OneLocation from './OneLocation';
+import MyMap from '../Map/MyMap';
 // import './oneLocation.css';
 
 export default function MainPage() {
@@ -24,6 +25,7 @@ export default function MainPage() {
     dispatch(setModal(oneLoc));
   };
   const modal = useSelector((state) => state.modal);
+
   return (
     <>
       <div>
@@ -33,9 +35,10 @@ export default function MainPage() {
         {location.map((loc) => (
           <OneLocation key={loc.id} loc={loc} />
         ))}
-        {modal
-      && <MyModal />}
+
       </div>
+      <MyMap />
+
     </>
   );
 }

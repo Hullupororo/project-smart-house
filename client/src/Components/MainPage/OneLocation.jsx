@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 export default function OneLocation({ loc }) {
-  //   const loc = useSelector((state) => state.loc);
   return (
     <div className="container">
       <div className="card">
@@ -15,11 +14,9 @@ export default function OneLocation({ loc }) {
           </div>
         </div>
       </div>
-      <body>
-        <div id="map" style={{ width: '600px', height: '400px' }} />
-      </body>
-
     </div>
 
   );
 }
+// {modal
+// && <MyModal />}
