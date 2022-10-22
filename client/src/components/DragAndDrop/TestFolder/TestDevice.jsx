@@ -7,11 +7,9 @@ export default function TestDevice({ parent, id }) {
   console.log(parent, id);
   return (
     <>
+      <div check={id} id={styles.yesdrop} className={styles.dragdrop}> #yes-drop </div>
       {parent
-        ? (
-          <div check={id} id={styles.yesdrop} className={`${styles.dragdrop} ${altStyles.dragdrop}`} />
-        )
-        : <div check={id} id={styles.yesdrop} className={styles.dragdrop}> #yes-drop </div>}
+     && <GuestPage />}
     </>
   );
 }

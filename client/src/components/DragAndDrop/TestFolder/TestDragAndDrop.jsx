@@ -37,6 +37,11 @@ export default function TestDragAndDrop() {
     ondropactivate(event) {
       // add active dropzone feedback
       event.target.classList.add('drop-active');
+      // set parent for a device
+      const check = event.relatedTarget.outerHTML.split(' ')[1].replace(/\D/g, '');
+
+      setAllDevices((prev) => prev
+        .map((el) => (el.id === Number(check) ? { ...el, parent: '' } : el)));
     },
     ondragenter(event) {
       const draggableElement = event.relatedTarget;
@@ -52,11 +57,6 @@ export default function TestDragAndDrop() {
       event.target.classList.remove('drop-target');
       event.relatedTarget.classList.remove('can-drop');
       event.relatedTarget.textContent = 'Dragged out';
-      // set parent for a device
-      const check = event.relatedTarget.outerHTML.split(' ')[1].replace(/\D/g, '');
-
-      setAllDevices((prev) => prev
-        .map((el) => (el.id === Number(check) ? { ...el, parent: '' } : el)));
     },
     ondrop(event) {
       event.relatedTarget.textContent = 'Dropped';
@@ -79,7 +79,7 @@ export default function TestDragAndDrop() {
       inertia: true,
       modifiers: [
         interact.modifiers.restrictRect({
-          restriction: 'parent',
+          restriction: 'none',
           endOnly: true,
         }),
       ],
