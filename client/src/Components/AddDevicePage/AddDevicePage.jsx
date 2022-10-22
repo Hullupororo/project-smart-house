@@ -1,7 +1,14 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import DropDownMenu from './DropDownMenu';
 
 export default function AddDevicePage() {
   return (
-    <div>AddDevicePage</div>
+    <>
+    </>
+    // <Container>
+
+  //   <DropDownMenu />
+  // </Container>
   );
 }
