@@ -19,10 +19,38 @@
   touch-action: manipulation;
 }
 
+
+.button-54ProMax {
+  width: 100%;
+  height: 100%;
+}
+.button-54ProMax-cont {
+  margin-top: 32%;
+  margin-left: 40%;
+  width: 20%;
+  height: 5%;
+}
+
 .button-54:active {
   box-shadow: 0px 0px 0px 0px;
   top: 5px;
   left: 5px;
+}
+.introText{
+  /* position: relative; */
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+    /* align-items: flex-start; */
+    margin-top: 2%;
+    /* font-weight: 400; */
+    /* z-index: 1000; */
+}
+.paragraph{
+  padding: 0;
+  margin: 0;
 }
 
 @media (min-width: 768px) {

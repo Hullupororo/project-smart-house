@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-multi-assign */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DraggableGroups from './groups';
