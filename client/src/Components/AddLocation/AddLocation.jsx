@@ -1,13 +1,18 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import './roomChoice.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addLocation } from '../../app/slices/locSlice';
 
 export default function AddLocation() {
+  const navigate = useNavigate();
   const [input, setInput] = useState({ title: '', address: '' });
+  const dispatch = useDispatch();
 
   const clickHandler = (inputPro) => {
-    axios.post('http://localhost:3001/api/newLocation', inputPro)
-      .then((res) => console.log(res));
+    dispatch(addLocation(inputPro));
+    navigate('/locations');
   };
   const changeHandler = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
