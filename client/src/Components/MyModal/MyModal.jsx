@@ -7,6 +7,7 @@ import './MyModal.css';
 export default function MyModal() {
   const dispatch = useDispatch();
   const modal = useSelector((state) => state.modal);
+
   return (
     <div id="modal">
       <p className="message">Are you sure you want to delete this location?</p>

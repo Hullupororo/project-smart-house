@@ -5,7 +5,7 @@ const { Location, Room } = require('../db/models');
 const router = express.Router();
 
 router.get('/locations', async (req, res) => {
-  const loations = await Location.findAll();
+  const loations = await Location.findAll({ order: [['id', 'DESC']] });
   res.json(loations);
 });
 

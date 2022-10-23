@@ -22,4 +22,13 @@ router.post('/newLocation', async (req, res) => {
       res.json(location);
     });
 });
+
+router.delete('/locations/delete/:id', async (req, res) => {
+  const { id } = req.params;
+  await Location.destroy(
+    { where: { id } },
+  );
+  res.sendStatus(200);
+});
+
 module.exports = router;

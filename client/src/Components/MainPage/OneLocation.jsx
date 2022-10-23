@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 // import './oneLocation.css';
 
-export default function OneLocation({ loc }) {
+export default function OneLocation({ loc, modalHandler }) {
   return (
     <div className="cardLocation" style={{ width: '40%' }}>
 
@@ -15,10 +15,9 @@ export default function OneLocation({ loc }) {
             <a href={`/locations/${loc.id}`}>Read More</a>
           </div>
         </div>
+        <button type="button" onClick={() => modalHandler(loc)}>Delete</button>
       </div>
     </div>
 
   );
 }
-// {modal
-// && <MyModal />}

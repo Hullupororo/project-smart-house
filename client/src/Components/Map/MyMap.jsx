@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -6,17 +7,16 @@ import './mymap.css';
 
 export default function MyMap() {
   const locationPro = useSelector((state) => state.loc);
-  // const [allCountries, setAllCountry] = useState([{ place: [55.684758, 37.738521] }]);
   const [location, setLocation] = useState([]);
-  const [country, setCountry] = useState({ shir: 55.76, dolg: 37.64 });
   const [myMap, setMyMap] = useState(null);
   const navigate = useNavigate();
+
   useEffect(
     () => {
       ymaps.ready(() => {
         const map = new ymaps.Map('map', {
           // Moscow
-          center: [country.shir, country.dolg],
+          center: [55.76, 37.64],
           zoom: 2,
         }, {
           searchControlProvider: 'yandex#search',
@@ -42,15 +42,19 @@ export default function MyMap() {
         iconContent: el.title,
         hintContent: el.address,
       },
+      // preset: 'islands#blueHomeIcon',
+      // iconColor: '#272727',
+
     }, {
       // Опции.
       // Иконка метки будет растягиваться под размер ее содержимого.
-      preset: 'islands#blackStretchyIcon',
+      preset: 'islands#blueHomeIcon',
+      iconColor: '#272727',
       // Метку можно перемещать.
       draggable: false,
     }));
     setLocation(obj);
-  }, [locationPro]);
+  }, [ymaps.GeoObject]);
 
   if (myMap) {
     location?.map((el) => myMap.geoObjects

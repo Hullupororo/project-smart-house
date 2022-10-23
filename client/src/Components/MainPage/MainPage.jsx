@@ -12,6 +12,7 @@ import './oneLocation.css';
 
 export default function MainPage() {
   const location = useSelector((state) => state.loc);
+  const modal = useSelector((state) => state.modal);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,7 +26,6 @@ export default function MainPage() {
   const modalHandler = (oneLoc) => {
     dispatch(setModal(oneLoc));
   };
-  const modal = useSelector((state) => state.modal);
 
   return (
     <Container className="newClassDasha">
@@ -33,12 +33,13 @@ export default function MainPage() {
       <div className="cards">
         <button className="button-54 button-54ProMaxGenius" type="button" onClick={addLoc}>Add location</button>
         {location.map((loc) => (
-          <OneLocation key={loc.id} loc={loc} />
+          <OneLocation key={loc.id} loc={loc} modalHandler={modalHandler} />
         ))}
 
       </div>
       <MyMap />
-
+      {modal
+ && <MyModal />}
     </Container>
 
   );
