@@ -2,6 +2,8 @@ import React from 'react';
 import GuestPage from '../../../Components/GuestPage/GuestPage';
 import styles from './interact.module.scss';
 import altStyles from './alternative.interact.module.scss';
+import MyModal from '../../../Components/MyModal/MyModal';
+import DeviceItem from './DeviceItem';
 
 export default function TestDevice({ parent, id }) {
   console.log(parent, id);
@@ -9,7 +11,7 @@ export default function TestDevice({ parent, id }) {
     <>
       <div check={id} id={styles.yesdrop} className={styles.dragdrop}> #yes-drop </div>
       {parent
-     && <GuestPage />}
+     && <DeviceItem />}
     </>
   );
 }

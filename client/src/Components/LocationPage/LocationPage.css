@@ -107,3 +107,7 @@ body{
    border: 1px solid hsl(0 0% 83%);
    
 }
+
+.hid {
+   display: none;
+}

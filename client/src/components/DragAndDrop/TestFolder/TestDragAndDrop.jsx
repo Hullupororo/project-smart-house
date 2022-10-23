@@ -63,6 +63,11 @@ export default function TestDragAndDrop() {
       const check = event.relatedTarget.outerHTML.split(' ')[1].replace(/\D/g, '');
       setAllDevices((prev) => prev
         .map((el) => (el.id === Number(check) ? { ...el, parent: event.target } : el)));
+      const x = document.getElementById('outer-dropzone');
+      const d = document.getElementById(styles.yesdrop);
+
+      event.relatedTarget.appendChild(d);
+      x.appendChild(event.relatedTarget);
 
       // set parent for a device
       setNewParent(event.target);

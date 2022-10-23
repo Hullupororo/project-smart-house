@@ -15,10 +15,13 @@ import React, {
 } from 'react';
 import useStateRef from 'react-usestateref';
 import BsLightbulb from 'react-icons/bs';
+import { FaFire } from 'react-icons/fa';
+import { MdLightbulbOutline } from 'react-icons/md';
 import TestCard from './TestCard/TestCard';
 
 import styles from './interact.module.scss';
 import styles2 from './interact.module copy.scss';
+import DeviceItem from './TestCard/DeviceItem';
 
 function Hero({ children }) {
   return <div>{children}</div>;
@@ -74,8 +77,6 @@ const Droppable = memo(({ element, draggables }) => (
   <div id={element.id} className={`${styles.dropzone}`}>
     <p>
       {element.id}
-      -
-      {Math.random()}
     </p>
     <Draggables
       grouped
@@ -120,10 +121,13 @@ const Draggable = memo(({ id, draggable, parent }) => (
       }`}
     >
 
-      <p>{id}</p>
-      <p>{parent && parent}</p>
+      {/* <p>{id}</p>
+      <p>{parent && parent}</p> */}
+      {!parent && (
+        <MdLightbulbOutline />
+      )}
       {parent && (
-      <TestCard />
+      <DeviceItem />
       )}
     </div>
     {/* )} */}
@@ -364,11 +368,11 @@ function DropZoneDemo() {
   return (
     <>
       <Hero className="center">
-        <div>
+        {/* <div>
           <h6>Add more elements</h6>
           <button onClick={createDraggable}>Create draggable</button>
           <button onClick={createDroppable}>Create droppable</button>
-        </div>
+        </div> */}
       </Hero>
       <EqualColumn>
         <div className={styles.dragdropdemo}>
