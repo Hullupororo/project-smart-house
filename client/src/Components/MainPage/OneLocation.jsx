@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+// import './oneLocation.css';
 
 export default function OneLocation({ loc }) {
   return (
