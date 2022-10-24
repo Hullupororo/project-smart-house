@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 import { getDevice } from '../../app/slices/deviceSlice';
 import { getRoom } from '../../app/slices/roomSlice';
 import ManageLamp from '../ManageDevice/Lamp/ManageLamp';
+import DraggableGroups from '../../components/DragAndDrop/groups';
 import './LocationPage.css';
 
 export default function LocationPage() {
@@ -37,6 +38,8 @@ export default function LocationPage() {
           </div>
         ))}
       </div>
+      <DraggableGroups />
+
       <div className="newCont">
 
         <div className="addDevice">

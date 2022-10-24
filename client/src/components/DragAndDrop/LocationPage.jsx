@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getDevice } from '../../app/slices/deviceSlice';
 import { getRoom } from '../../app/slices/roomSlice';
+import DraggableGroups from './groups';
+
 import './LocationPage.css';
 
 export default function LocationPage() {
