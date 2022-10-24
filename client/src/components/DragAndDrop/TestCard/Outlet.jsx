@@ -6,7 +6,7 @@ export default function Outlet() {
     <div id="yes-drop" className="drag-drop device">
       <p className="message">IM AN OUTLET</p>
 
-      <button>IM A BUTTON</button>
+      <button type="button">IM A BUTTON</button>
       {/* <div className="options" /> */}
     </div>
   );

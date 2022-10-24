@@ -225,7 +225,6 @@ function useDropZone(className, onDrop, onLeave, onEnter, onDeactivate) {
         event.target.classList.remove(styles.draggable);
         event.target.classList.add('white-text');
 
-
         event.relatedTarget.classList.remove(styles.draggable);
         if (onDrop) {
           onDrop({
@@ -262,8 +261,8 @@ function DropZoneDemo() {
     //     },
     //   ],
     // },
-    { id: 'Connect device', name: 'Connect device' },
-    { id: 'Room-5' },
+    { id: 'Connect device' },
+    { id: 'Connect second device' },
   ]);
 
   const [draggables, setDraggables, draggablesRef] = useStateRef([

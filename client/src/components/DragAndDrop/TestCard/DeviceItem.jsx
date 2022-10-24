@@ -6,7 +6,7 @@ export default function FaFireDeviceItem() {
     <div id="yes-drop" className="drag-drop device">
       <p className="message">IM A LIGHTBULB</p>
 
-      <button>IM A BUTTON</button>
+      <button type="button">IM A BUTTON</button>
       {/* <div className="options" /> */}
     </div>
   );
