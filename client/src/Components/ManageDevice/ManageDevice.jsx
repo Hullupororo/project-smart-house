@@ -3,6 +3,9 @@ import ManageLamp from './Lamp/ManageLamp';
 
 export default function ManageDevice() {
   return (
-    <ManageLamp />
+    <>
+      <div>Панель управления</div>
+      <ManageLamp />
+    </>
   );
 }

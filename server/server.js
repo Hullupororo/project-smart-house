@@ -7,6 +7,7 @@ const userRouter = require('./routes/userRouter');
 const apiRouter = require('./routes/apiRouter');
 const locationRouter = require('./routes/locationRouter');
 const deviceRouter = require('./routes/deviceRouter');
+const funcRoute = require('./routes/funcRoute');
 
 require('dotenv').config();
 
@@ -35,6 +36,7 @@ app.use(session({
 app.use('/user', userRouter);
 app.use('/', locationRouter);
 app.use('/device', deviceRouter);
+app.use('/dev', funcRoute);
 app.use('/api', apiRouter);
 
 app.listen(PORT, console.log(`SERVER STARTED ON ${PORT}`));
