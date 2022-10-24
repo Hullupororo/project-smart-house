@@ -29,5 +29,17 @@ router.post('/color', (req, res) => {
   });
   res.sendStatus(200);
 });
+router.post('/brightness', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  const { brightness } = req.body;
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Lampa/set', `{"brightness": "${brightness}"}`);
+      }
+    });
+  });
+  res.sendStatus(200);
+});
 
 module.exports = router;
