@@ -223,9 +223,10 @@ function useDropZone(className, onDrop, onLeave, onEnter, onDeactivate) {
         event.relatedTarget.classList.add(styles.dropped);
         event.target.classList.remove(styles.dropzone);
         event.target.classList.remove(styles.draggable);
+        event.target.classList.add('white-text');
+
 
         event.relatedTarget.classList.remove(styles.draggable);
-
         if (onDrop) {
           onDrop({
             droppable: event.target.id,
@@ -261,7 +262,7 @@ function DropZoneDemo() {
     //     },
     //   ],
     // },
-    { id: 'Подключите устройсвто' },
+    { id: 'Connect device', name: 'Connect device' },
     { id: 'Room-5' },
   ]);
 

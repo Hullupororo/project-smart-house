@@ -4,6 +4,8 @@
   
   .flex {
     display: flex;
+    flex-direction: column;
+    margin-left: 80px;
   }
   .flex * {
     /* flex-grow: 1; */
@@ -51,6 +53,9 @@
     background-color: #29e;
     border-color: #fff;
     border-style: solid;
+  }
+  .white-text {
+    color: white;
   }
   
   .drag-drop {
