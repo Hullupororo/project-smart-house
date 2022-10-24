@@ -23,11 +23,11 @@ function MyNavBar() {
             <div className="title">
               <Link to="/">smarthouse</Link>
             </div>
-            <div className="title">
+            {/* <div className="title">
               <Link to="/">device</Link>
-            </div>
+            </div> */}
             <div className="title">
-              <Link to="/">Home</Link>
+              <Link to="/locations">Home</Link>
             </div>
             <div className="title">
               <Link to="/" onClick={logoutHandler}>logout</Link>

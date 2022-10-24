@@ -11,11 +11,14 @@ export default function OneLocation({ loc, modalHandler }) {
           <div className="content">
 
             <h3 className="locText">{loc.title}</h3>
+            <h5 className="locTextMini">{loc.address}</h5>
 
-            <a href={`/locations/${loc.id}`}>Read More</a>
+            <a className="manageLoc" href={`/locations/${loc.id}`}>Manage location</a>
           </div>
         </div>
-        <button type="button" onClick={() => modalHandler(loc)}>Delete</button>
+        <div>
+          <button className="deleteButton" type="button" onClick={() => modalHandler(loc)}>Delete</button>
+        </div>
       </div>
     </div>
 
