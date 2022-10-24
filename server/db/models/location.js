@@ -21,6 +21,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Location.init({
     title: DataTypes.STRING,
+    address: DataTypes.STRING,
+    shir: DataTypes.FLOAT,
+    dolg: DataTypes.FLOAT,
     user_id: DataTypes.INTEGER,
   }, {
     sequelize,

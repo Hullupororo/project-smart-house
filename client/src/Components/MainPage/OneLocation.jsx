@@ -1,28 +1,23 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+// import './oneLocation.css';
 
-export default function OneLocation({ loc }) {
-  //   const loc = useSelector((state) => state.loc);
+export default function OneLocation({ loc, modalHandler }) {
   return (
-    // <div className="container">
-    <>
+    <div className="cardLocation" style={{ width: '40%' }}>
 
-      <div className="card">
+      <div className="card2">
         <div className="box">
           <div className="content">
 
-            <h3>{loc.title}</h3>
+            <h3 className="locText">{loc.title}</h3>
 
             <a href={`/locations/${loc.id}`}>Read More</a>
           </div>
         </div>
+        <button type="button" onClick={() => modalHandler(loc)}>Delete</button>
       </div>
-      <body>
-        <div id="map" style={{ width: '600px', height: '400px' }} />
-      </body>
-    </>
-
-  // </div>
+    </div>
 
   );
 }
