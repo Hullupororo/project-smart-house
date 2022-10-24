@@ -17,9 +17,9 @@ export default function LampColorPicker() {
   };
 
   return (
-    <>
-      <ColorPicker width={300} height={200} color={color} onChange={setColor} hideHSV hideHEX hideRGB light />
-      <button type="button" onClick={() => changeHandler()}>Изменить цвет</button>
-    </>
+    <div className="colorPicker">
+      <ColorPicker width={200} height={150} color={color} onChange={setColor} hideHSV hideHEX hideRGB light />
+      <button className="colorButton" type="button" onClick={() => changeHandler()}>Change Color</button>
+    </div>
   );
 }

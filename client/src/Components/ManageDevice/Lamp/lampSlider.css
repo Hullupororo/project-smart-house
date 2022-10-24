@@ -97,7 +97,7 @@ input[type=range] {
     background-color: #ffffff;
   }
   section div {
-    margin: auto;
+    /* margin: auto; */
     width: 80%;
   }
  
