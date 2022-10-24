@@ -86,7 +86,7 @@ function useDraggable(
 
 const Droppable = memo(({ element, draggables }) => (
   <div id={element.id} className={`${styles.dropzone}`}>
-    <p>
+    <p id="text-changed" className="text-change">
       {element.id}
     </p>
     <Draggables
@@ -223,7 +223,8 @@ function useDropZone(className, onDrop, onLeave, onEnter, onDeactivate) {
         event.relatedTarget.classList.add(styles.dropped);
         event.target.classList.remove(styles.dropzone);
         event.target.classList.remove(styles.draggable);
-        event.target.classList.add('white-text');
+        // document.getElementById('text-changed').classList.add('text-change');
+        // event.target.classList.add('white-text');
 
         event.relatedTarget.classList.remove(styles.draggable);
         if (onDrop) {

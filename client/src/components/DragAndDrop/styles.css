@@ -54,9 +54,9 @@
     border-color: #fff;
     border-style: solid;
   }
-  .white-text {
+  /* .text-change {
     color: white;
-  }
+  } */
   
   .drag-drop {
     display: inline-block;
