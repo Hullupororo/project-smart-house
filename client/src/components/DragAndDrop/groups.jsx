@@ -126,8 +126,8 @@ const Draggable = memo(({ id, draggable, parent }) => (
 
     <div
       key={Math.random()}
-      id={id}
-      className={`flex center column ${parent ? styles2.dragdrop : styles.dragdrop} ${
+      id={parent ? 'none ' : id}
+      className={`flex center column ${parent ? 'none' : styles.dragdrop} ${
         draggable ? styles.yesdrop : styles.nodrop
       }`}
     >
@@ -221,6 +221,11 @@ function useDropZone(className, onDrop, onLeave, onEnter, onDeactivate) {
       ondrop(event) {
         event.target.classList.add(styles.dropped);
         event.relatedTarget.classList.add(styles.dropped);
+        event.target.classList.remove(styles.dropzone);
+        event.target.classList.remove(styles.draggable);
+
+        event.relatedTarget.classList.remove(styles.draggable);
+
         if (onDrop) {
           onDrop({
             droppable: event.target.id,

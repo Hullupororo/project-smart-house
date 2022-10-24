@@ -25,7 +25,7 @@ function handleClick() {
 export default function ManageLamp() {
   return (
   // <Connector brokerUrl="mqtt://192.168.2.155:1883">
-    <div id="yes-drop" className="DashaProX drag-drop">
+    <div className="DashaProX">
       <div>
         <label className="switch">
           <input type="checkbox" onClick={() => handleClick()} />
