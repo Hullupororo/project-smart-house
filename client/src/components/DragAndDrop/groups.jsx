@@ -17,11 +17,13 @@ import useStateRef from 'react-usestateref';
 import BsLightbulb from 'react-icons/bs';
 import { FaFire } from 'react-icons/fa';
 import { MdLightbulbOutline } from 'react-icons/md';
+import { RiOutlet2Fill } from 'react-icons/ri';
 import TestCard from './TestCard/TestCard';
 
 import styles from './interact.module.scss';
 import styles2 from './interact.module copy.scss';
 import DeviceItem from './TestCard/DeviceItem';
+import './LocationPage.css';
 
 function Hero({ children }) {
   return <div>{children}</div>;
@@ -32,7 +34,14 @@ function Content({ children }) {
 }
 
 function EqualColumn({ children }) {
-  return <div className="flex">{children}</div>;
+  return (
+    <div
+      className="flex"
+      style={{ marginLeft: '80px' }}
+    >
+      {children}
+    </div>
+  );
 }
 
 function dragMoveListener(event) {
@@ -124,10 +133,12 @@ const Draggable = memo(({ id, draggable, parent }) => (
       {/* <p>{id}</p>
       <p>{parent && parent}</p> */}
       {!parent && (
-        <MdLightbulbOutline />
+        id === 'device-2' ? <MdLightbulbOutline /> : <RiOutlet2Fill />
+
       )}
       {parent && (
-      <DeviceItem />
+        id === 'device-2' ? <DeviceItem /> : <p>Im an outlet</p>
+
       )}
     </div>
     {/* )} */}
@@ -364,7 +375,7 @@ function DropZoneDemo() {
       { id: `Room-${Math.random().toString(36).substring(2, 5)}` },
     ]);
   }
-
+  const rooms = [1, 2, 3, 4];
   return (
     <>
       <Hero className="center">
@@ -375,8 +386,17 @@ function DropZoneDemo() {
         </div> */}
       </Hero>
       <EqualColumn>
+        <div className="sidebar">
+          {rooms?.map((room) => (
+            <div className="link">
+              <div className={`text ${room.id}`}>{room}</div>
+            </div>
+          ))}
+        </div>
         <div className={styles.dragdropdemo}>
-          <Draggables elements={draggables} />
+          <div className="alldrag">
+            <Draggables elements={draggables} />
+          </div>
           <Droppables elements={droppables} draggables={draggables} />
         </div>
       </EqualColumn>

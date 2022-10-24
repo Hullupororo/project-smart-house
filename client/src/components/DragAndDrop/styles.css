@@ -6,7 +6,8 @@
     display: flex;
   }
   .flex * {
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    
   }
   
   .drag-item {
