@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.belongsTo(models.Location, {
         foreignKey: 'loc_id',
+        onDelete: 'CASCADE',
       });
       this.hasMany(models.Device, {
         foreignKey: 'room_id',

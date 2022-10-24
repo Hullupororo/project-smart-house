@@ -13,11 +13,13 @@ const locSlice = createSlice({
     addLoc(state, action) {
       return [...state, action.payload];
     },
-
+    deleteLoc(state, action) {
+      return state.filter((el) => el.id !== Number(action.payload));
+    },
   },
 });
 
-export const { setLoc, addLoc } = locSlice.actions;
+export const { setLoc, addLoc, deleteLoc } = locSlice.actions;
 export default locSlice.reducer;
 
 export const getLoc = () => (dispatch) => {
@@ -28,4 +30,9 @@ export const getLoc = () => (dispatch) => {
 export const addLocation = (inputPro) => (dispatch) => {
   axios.post('http://localhost:3001/api/newLocation', inputPro)
     .then((res) => dispatch(addLoc(res.data)));
+};
+
+export const deleteLocation = (loc) => (dispatch) => {
+  axios.delete(`http://localhost:3001/api/locations/delete/${loc.id}`)
+    .then((res) => dispatch(deleteLoc(res.data)));
 };

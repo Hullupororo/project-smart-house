@@ -13,6 +13,7 @@ module.exports = {
       },
       loc_id: {
         type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
         references: {
           model: {
             tableName: 'Locations',

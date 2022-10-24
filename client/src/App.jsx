@@ -17,6 +17,7 @@ import GuestPage from './Components/GuestPage/GuestPage';
 import DragAndDrop from './Components/DragAndDrop/DragAndDrop';
 import Animation from './Components/Animation/Animation';
 import MyModal from './Components/MyModal/MyModal';
+import DropLocation from './Components/DropLocation/DropLocation';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -38,7 +39,7 @@ function App() {
           <Route path="/locations" element={<MainPage />} />
           <Route path="/locations/:id" element={<LocationPage />} />
           <Route path="/device/new" element={<AddDevicePage />} />
-          <Route path="/locations/new" element={<AddLocation />} />
+          <Route path="/locations/new" element={<DropLocation />} />
           <Route path="/device/edit" element={<ManageDevice />} />
           {/* <Route path="/animation" element={<Animation />} /> */}
         </Routes>

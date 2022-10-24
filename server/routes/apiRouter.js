@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 const express = require('express');
 const axios = require('axios');
-const { Location } = require('../db/models');
+const { Location, Room } = require('../db/models');
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ router.get('/allLocations', async (req, res) => {
 });
 
 router.post('/newLocation', async (req, res) => {
-  const { title, address } = req.body;
+  const { title, address, rooms } = req.body;
   const geo = address.replaceAll(' ', '+');
   axios.get(`https://geocode-maps.yandex.ru/1.x/?format=json&apikey=79f85217-c671-430e-b7b8-c071e002b062&geocode=${geo}`)
     .then(async (resss) => {
@@ -19,6 +20,10 @@ router.post('/newLocation', async (req, res) => {
       const location = await Location.create({
         title, address, user_id: req.session.user.id, shir: coord[0], dolg: coord[1],
       });
+      //  await Location.findOne({ where: { title } });
+      // console.log(location);
+      await Room.bulkCreate(rooms.map((el) => ({ loc_id: location.id, title: el })));
+      // console.log(newRooms);
       res.json(location);
     });
 });
@@ -28,7 +33,7 @@ router.delete('/locations/delete/:id', async (req, res) => {
   await Location.destroy(
     { where: { id } },
   );
-  res.sendStatus(200);
+  res.json(id);
 });
 
 module.exports = router;
