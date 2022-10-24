@@ -24,6 +24,7 @@ import styles from './interact.module.scss';
 import styles2 from './interact.module copy.scss';
 import DeviceItem from './TestCard/DeviceItem';
 import './LocationPage.css';
+import Outlet from './TestCard/Outlet';
 
 function Hero({ children }) {
   return <div>{children}</div>;
@@ -137,7 +138,7 @@ const Draggable = memo(({ id, draggable, parent }) => (
 
       )}
       {parent && (
-        id === 'device-2' ? <DeviceItem /> : <p>Im an outlet</p>
+        id === 'device-2' ? <DeviceItem /> : <Outlet />
 
       )}
     </div>

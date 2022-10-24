@@ -58,8 +58,8 @@
     min-width: 40px;
     padding: 2em 0.5em;
   
-    color: #fff;
-    background-color: #29e;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     border: solid 2px #fff;
   
     -webkit-transform: translate(0px, 0px);
