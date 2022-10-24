@@ -17,7 +17,7 @@ export default function MyMap() {
         const map = new ymaps.Map('map', {
           // Moscow
           center: [55.76, 37.64],
-          zoom: 2,
+          zoom: 10,
         }, {
           searchControlProvider: 'yandex#search',
         });
@@ -54,7 +54,7 @@ export default function MyMap() {
       draggable: false,
     }));
     setLocation(obj);
-  }, [ymaps.GeoObject]);
+  }, [locationPro]);
 
   if (myMap) {
     location?.map((el) => myMap.geoObjects

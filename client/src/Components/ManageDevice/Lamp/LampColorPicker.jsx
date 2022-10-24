@@ -6,5 +6,5 @@ import 'react-color-palette/lib/css/styles.css';
 export default function LampColorPicker() {
   const [color, setColor] = useColor('hex', '#121212');
 
-  return <ColorPicker width={300} height={200} color={color} onChange={setColor} hideHSV hideHEX hideRGB light />;
+  return <ColorPicker width={250} height={150} color={color} onChange={setColor} hideHSV hideHEX hideRGB light />;
 }

@@ -1,6 +1,6 @@
 input[type=range] {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 1;
     height: 2em;
     background-color: transparent;
@@ -31,7 +31,7 @@ input[type=range] {
     border: 4px solid rgb(255, 255, 255);
     cursor: pointer;
   }
-  input[type=range]::-moz-range-thumb {
+  /* input[type=range]::-moz-range-thumb {
     width: 2em;
     height: 2em;
     margin-top: 0;
@@ -47,8 +47,8 @@ input[type=range] {
     background-color: #ff0000;
     border-radius: 1em;
     border: 2px solid rgb(255, 0, 0);
-    cursor: pointer;
-  }
+    cursor: pointer; */
+  /* } */
   input[type=range]:hover::-webkit-slider-thumb {
     border-color: #fddb3a;
   }
@@ -70,8 +70,9 @@ input[type=range] {
   input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     cursor: pointer;
-    height: 1em;
-    border-bottom: 2px solid #272727;
+    height: 1.15em;
+    border-bottom: 4px solid #616161;
+    border-radius: 2px 2px;
     background-color: transparent;
   }
   input[type=range]::-moz-range-track {

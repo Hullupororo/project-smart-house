@@ -41,6 +41,11 @@
 
 }
 
+.locTextMini {
+  font-size: smaller;
+  color: rgb(100, 100, 100);
+}
+
 .button-54ProMaxGenius {
   margin-top: 5%;
   width: 400px;
