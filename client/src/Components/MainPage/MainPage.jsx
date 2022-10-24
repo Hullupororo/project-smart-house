@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
@@ -9,8 +9,10 @@ import { getLoc } from '../../app/slices/locSlice';
 import OneLocation from './OneLocation';
 import MyMap from '../Map/MyMap';
 import './oneLocation.css';
+import searchSagaWatcher from '../../app/sagas/searchSaga';
 
 export default function MainPage() {
+  const [search, setSearch] = useState('');
   const location = useSelector((state) => state.loc);
   const modal = useSelector((state) => state.modal);
   const dispatch = useDispatch();
@@ -26,12 +28,36 @@ export default function MainPage() {
   const modalHandler = (oneLoc) => {
     dispatch(setModal(oneLoc));
   };
+  const searchHandler = (e) => {
+    setSearch(e.target.value);
+  };
+  useEffect(() => {
+    if (search.length) {
+      console.log(search);
+      dispatch(searchSagaWatcher(search));
+    }
+  }, [search]);
 
   return (
     <Container className="newClassDasha">
 
       <div className="cards">
         <button className="button-54 button-54ProMaxGenius" type="button" onClick={addLoc}>Add location</button>
+        <form className="formSearch">
+          <div className="searchInput">
+            <input
+              type="input"
+              className="searchField"
+              placeholder="Location"
+              name="address"
+              id="location"
+              onChange={searchHandler}
+              value={search}
+            />
+            <label htmlFor="name" className="labelSearch">search</label>
+            <button className="button-54 button-54ProMaxGeniusPlus" type="submit">search</button>
+          </div>
+        </form>
         {location.map((loc) => (
           <OneLocation key={loc.id} loc={loc} modalHandler={modalHandler} />
         ))}

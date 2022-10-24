@@ -16,10 +16,16 @@ const locSlice = createSlice({
     deleteLoc(state, action) {
       return state.filter((el) => el.id !== Number(action.payload));
     },
+    filterLoc(state, action) {
+      return state.filter((el) => el.title.toLowerCase().includes(action.payload.toLowerCase())
+      || el.title.toLowerCase().includes(action.payload.toLowerCase()));
+    },
   },
 });
 
-export const { setLoc, addLoc, deleteLoc } = locSlice.actions;
+export const {
+  setLoc, addLoc, deleteLoc, filterLoc,
+} = locSlice.actions;
 export default locSlice.reducer;
 
 export const getLoc = () => (dispatch) => {
