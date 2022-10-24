@@ -3,37 +3,37 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Rooms', [
       {
-        title: 'Кухня',
+        title: 'Kitchen',
         loc_id: 1,
         createdAt: Sequelize.fn('NOW'),
         updatedAt: Sequelize.fn('NOW'),
       },
       {
-        title: 'Гостиная',
+        title: 'Living Room',
         loc_id: 1,
         createdAt: Sequelize.fn('NOW'),
         updatedAt: Sequelize.fn('NOW'),
       },
       {
-        title: 'Ванная',
+        title: 'Bathroom',
         loc_id: 1,
         createdAt: Sequelize.fn('NOW'),
         updatedAt: Sequelize.fn('NOW'),
       },
       {
-        title: 'Спальня',
+        title: 'Bedroom',
         loc_id: 1,
         createdAt: Sequelize.fn('NOW'),
         updatedAt: Sequelize.fn('NOW'),
       },
       {
-        title: 'Кабинет',
+        title: 'Cabinet',
         loc_id: 2,
         createdAt: Sequelize.fn('NOW'),
         updatedAt: Sequelize.fn('NOW'),
       },
       {
-        title: 'Кухня',
+        title: 'Kitchen',
         loc_id: 2,
         createdAt: Sequelize.fn('NOW'),
         updatedAt: Sequelize.fn('NOW'),
