@@ -14,7 +14,7 @@ html {
   
   #modal {
     font-family: "Montserrat", sans-serif;
-    position: absolute;
+    position: fixed;
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%);

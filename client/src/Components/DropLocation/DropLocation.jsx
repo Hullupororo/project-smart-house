@@ -1,18 +1,25 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import './DropLocation.css';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addLocation } from '../../app/slices/locSlice';
 
 export default function DropLocation() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [check, setCheck] = useState([]);
   const [input, setInput] = useState({
     title: '',
-    location: '',
+    address: '',
     rooms: [],
   });
   const rooms = ['living room', 'kitchen', 'dining room', 'bedroom', 'bathroom', 'office room'];
-  const addHandler = (e) => {
+  const clickHandler = (e, inputPro) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/locations/add', { input });
+    dispatch(addLocation(inputPro));
+    navigate('/locations');
   };
   useEffect(() => { setInput((prev) => ({ ...prev, rooms: check })); }, [check]);
 
@@ -28,14 +35,14 @@ export default function DropLocation() {
       <div className="addLoc">
         Add location
       </div>
-      <form className="formLoc" onSubmit={addHandler}>
+      <form className="formLoc" onSubmit={(e) => clickHandler(e, input)}>
         <div className="inputField">
           <input type="input" className="inputLoc" placeholder="Title" name="title" id="title" value={input.title} onChange={inputHandler} />
           <label htmlFor="name" className="labelLoc">Title</label>
         </div>
         <div className="inputField">
-          <input type="input" className="inputLoc" placeholder="Location" name="location" id="location" value={input.location} onChange={inputHandler} />
-          <label htmlFor="name" className="labelLoc">Location</label>
+          <input type="input" className="inputLoc" placeholder="Location" name="address" id="location" value={input.location} onChange={inputHandler} />
+          <label htmlFor="name" className="labelLoc">Address</label>
         </div>
 
         <nav className="drop">

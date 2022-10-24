@@ -11,6 +11,15 @@ module.exports = {
       title: {
         type: Sequelize.STRING,
       },
+      address: {
+        type: Sequelize.STRING,
+      },
+      shir: {
+        type: Sequelize.FLOAT,
+      },
+      dolg: {
+        type: Sequelize.FLOAT,
+      },
       user_id: {
         type: Sequelize.INTEGER,
         references: {
