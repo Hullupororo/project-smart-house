@@ -255,7 +255,7 @@ function DropZoneDemo() {
     //     },
     //   ],
     // },
-    { id: 'Room-4' },
+    { id: 'Подключите устройсвто' },
     { id: 'Room-5' },
   ]);
 
@@ -379,6 +379,13 @@ function DropZoneDemo() {
   const rooms = [1, 2, 3, 4];
   return (
     <>
+      <div className="sidebar">
+        {rooms?.map((room) => (
+          <div className="link">
+            <div className="text">{room}</div>
+          </div>
+        ))}
+      </div>
       <Hero className="center">
         {/* <div>
           <h6>Add more elements</h6>
@@ -387,13 +394,6 @@ function DropZoneDemo() {
         </div> */}
       </Hero>
       <EqualColumn>
-        <div className="sidebar">
-          {rooms?.map((room) => (
-            <div className="link">
-              <div className={`text ${room.id}`}>{room}</div>
-            </div>
-          ))}
-        </div>
         <div className={styles.dragdropdemo}>
           <div className="alldrag">
             <Draggables elements={draggables} />
