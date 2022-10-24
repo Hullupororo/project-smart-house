@@ -54,7 +54,11 @@ export default function MyMap() {
       draggable: false,
     }));
     setLocation(obj);
-  }, [locationPro]);
+  }, [ymaps.GeoObject]);
+
+  // useEffect(() => {
+
+  // }, [locationPro]);
 
   if (myMap) {
     location?.map((el) => myMap.geoObjects
