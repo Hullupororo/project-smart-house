@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import axios from 'axios';
@@ -6,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getDevice } from '../../app/slices/deviceSlice';
 import { getRoom } from '../../app/slices/roomSlice';
+import ManageLamp from '../ManageDevice/Lamp/ManageLamp';
 import './LocationPage.css';
 
 export default function LocationPage() {
@@ -13,7 +16,7 @@ export default function LocationPage() {
   const dispatch = useDispatch();
   const rooms = useSelector((state) => state.room);
   // const devices = useSelector((state) => state.device);
-  const devices = [{ id: 1, title: 'Lamp' }, { id: 2, title: 'socket' }, { id: 3, title: 'button' }, { id: 4, title: 'griby' }];
+  // const devices = [{ id: 1, title: 'Lamp' }, { id: 2, title: 'socket' }, { id: 3, title: 'button' }, { id: 4, title: 'griby' }];
   useEffect(() => {
     dispatch(getRoom(id));
   }, []);
@@ -40,19 +43,19 @@ export default function LocationPage() {
           <p>add devices</p>
         </div>
         <div className="deviceField">
-          {devices?.map((device) => (
+          {/* {devices?.map((device) => (
             <div className="fields">{device.title}</div>
-          ))}
-          {devices.length ? (
+          ))} */}
+          {/* {devices.length ? (
             ''
-          ) : (
-            <>
-              <div className="fields" />
-              <div className="fields" />
-              <div className="fields" />
-              <div className="fields" />
-            </>
-          )}
+          ) : ( */}
+          <div className="fields">
+            <ManageLamp />
+          </div>
+          <div className="fields" />
+          <div className="fields" />
+          <div className="fields" />
+          {/* )} */}
         </div>
       </div>
     </>
