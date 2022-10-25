@@ -15,7 +15,7 @@ export default function DropLocation() {
     address: '',
     rooms: [],
   });
-  const rooms = ['living room', 'kitchen', 'dining room', 'bedroom', 'bathroom', 'office room'];
+  const rooms = ['Living room', 'Kitchen', 'Bedroom', 'Bathroom', 'Root', 'Hub', 'Поляна'];
   const clickHandler = (e, inputPro) => {
     e.preventDefault();
     dispatch(addLocation(inputPro));

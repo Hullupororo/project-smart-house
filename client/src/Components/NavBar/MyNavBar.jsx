@@ -21,7 +21,12 @@ function MyNavBar() {
 
           <>
             <div className="title">
-              <Link to="/">smarthouse</Link>
+              {user.email === 'tapac@tapac'
+                ? (
+                  <Link to="/">smarthouse</Link>
+                ) : (
+                  <Link to="/">smarthouse</Link>
+                )}
             </div>
             {/* <div className="title">
               <Link to="/">device</Link>

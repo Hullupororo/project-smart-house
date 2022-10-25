@@ -137,7 +137,9 @@ margin: auto;
 
 #touch {position: absolute; opacity: 0; height: 0px;}    
 
-#touch:checked + .slide {height: 370px;} 
+/* #touch:checked + .slide {height: 370px;}  */
+#touch:checked + .slide {height: 430px;} 
+
 .drops{
     display: flex;
     justify-content: space-between;
