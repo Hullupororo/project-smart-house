@@ -18,6 +18,7 @@ import BsLightbulb from 'react-icons/bs';
 import { FaFire } from 'react-icons/fa';
 import { MdLightbulbOutline } from 'react-icons/md';
 import { RiOutlet2Fill } from 'react-icons/ri';
+import { useSelector } from 'react-redux';
 import TestCard from './TestCard/TestCard';
 
 import styles from './interact.module.scss';
@@ -25,8 +26,7 @@ import styles2 from './interact.module copy.scss';
 import DeviceItem from './TestCard/DeviceItem';
 import './LocationPage.css';
 import Outlet from './TestCard/Outlet';
-import ManageLamp from '../../Components/ManageDevice/Lamp/ManageLamp';
-import { useSelector } from 'react-redux';
+import ManageLamp from '../ManageDevice/Lamp/ManageLamp';
 
 function Hero({ children }) {
   return <div>{children}</div>;
@@ -392,7 +392,7 @@ function DropZoneDemo() {
       <div className="sidebar">
         {rooms?.map((room) => (
           <div className="link">
-            <div className="text">{room}</div>
+            <div className="text">{room.title}</div>
           </div>
         ))}
       </div>
