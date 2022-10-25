@@ -1,5 +1,5 @@
 import React from 'react';
-import GuestPage from '../../../Components/GuestPage/GuestPage';
+import GuestPage from '../../GuestPage/GuestPage';
 
 export default function TestCard({ id, dragClass }) {
   return (
