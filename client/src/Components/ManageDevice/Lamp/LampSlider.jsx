@@ -8,7 +8,6 @@ export default function LampSlider() {
     setLight({ brightness: e.target.value });
   };
   const brightness = () => {
-    console.log(JSON.stringify(light));
     fetch('http://localhost:3001/dev/brightness', {
       method: 'POST',
       headers: {
