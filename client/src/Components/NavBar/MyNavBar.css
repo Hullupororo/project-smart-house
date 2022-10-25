@@ -32,7 +32,7 @@ body {
   background-color: #272727;
   position: absolute;
   top: 4.5%;
-  left: 47%;
+  left: 48.5%;
   /* margin: auto; */
    display: flex;
   /* justify-content: space-around; */
@@ -91,7 +91,7 @@ body {
 
 .navMenu  .title:nth-child(2):hover ~ .dot {
   -webkit-transform: translateX(110px);
-  transform: translateX(14.6rem);
+  transform: translateX(14.3rem);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
@@ -99,7 +99,7 @@ body {
 
 .navMenu  .title:nth-child(3):hover ~ .dot {
   -webkit-transform: translateX(200px);
-  transform: translateX(22.7rem);
+  transform: translateX(22.5rem);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;

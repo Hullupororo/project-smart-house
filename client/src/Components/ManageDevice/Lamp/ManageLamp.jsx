@@ -25,7 +25,8 @@ function handleClick() {
 export default function ManageLamp() {
   return (
     <div className="DashaProX">
-      <div>
+      <div className="lampSettings">
+
         <h5>On / Off</h5>
         <label className="switch">
           <input type="checkbox" onClick={() => handleClick()} />

@@ -45,7 +45,11 @@ export default function MainPage() {
     <Container className="newClassDasha">
 
       <div className="cards">
-        <button className="button-54 button-54ProMaxGenius" type="button" onClick={addLoc}>Add location</button>
+
+             <div className="KirillTheBest">
+
+          <button className="button-54 button-54ProMaxGenius" type="button" onClick={addLoc}>Add location</button>
+        </div>
         <form className="formSearch">
           <div className="searchInput">
             <input
@@ -60,6 +64,7 @@ export default function MainPage() {
             <label htmlFor="name" className="labelSearch">search</label>
           </div>
         </form>
+
         {location.map((loc) => (
           <OneLocation key={loc.id} loc={loc} modalHandler={modalHandler} />
         ))}
