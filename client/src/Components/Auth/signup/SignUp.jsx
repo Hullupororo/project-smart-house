@@ -10,13 +10,18 @@ export default function SignUp() {
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(userSignUp(Object.fromEntries(new FormData(e.target))));
-    navigate('/locations');
+    dispatch(userSignUp(Object.fromEntries(new FormData(e.target)), navigate));
   };
 
   return (
     <div className="form-containerPro">
       <form onSubmit={submitHandler} className="main main-signup">
+        {user.error
+      && (
+      <div>
+        {user.error}
+      </div>
+      )}
         <div className="form__group field">
           <input type="name" className="form__field" placeholder="Name" name="name" />
           <label htmlFor="name" className="form__label">Name</label>

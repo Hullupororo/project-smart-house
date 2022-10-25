@@ -28,7 +28,7 @@ export default function Animation() {
     loop: true,
     autoplay: false,
     duration: 600,
-    loopComplete: (a) => console.log('end'),
+    // loopComplete: (a) => console.log('end'),
     // update: () => console.log(staggersAnimation.progress)
   })
     .add({
