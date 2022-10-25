@@ -46,7 +46,7 @@ export default function MainPage() {
 
       <div className="cards">
 
-             <div className="KirillTheBest">
+        <div className="KirillTheBest">
 
           <button className="button-54 button-54ProMaxGenius" type="button" onClick={addLoc}>Add location</button>
         </div>
