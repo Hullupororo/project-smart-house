@@ -76,7 +76,7 @@
 }
 
 
-}
+
 .button-54ProMaxGeniusPlus{
   margin-top: 20px;
   width: 130px;
@@ -89,6 +89,7 @@ width: 400px;
   padding-top: 35px;
 margin: auto;
   width: 100%;
+  left: 12%;
 }
 .searchField{
   font-family: inherit;

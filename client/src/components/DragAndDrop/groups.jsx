@@ -27,6 +27,7 @@ import DeviceItem from './TestCard/DeviceItem';
 import './LocationPage.css';
 import Outlet from './TestCard/Outlet';
 import ManageLamp from '../ManageDevice/Lamp/ManageLamp';
+import ManageOutlet from '../ManageDevice/Outlet/ManageOutlet';
 
 function Hero({ children }) {
   return <div>{children}</div>;
@@ -140,7 +141,7 @@ const Draggable = memo(({ id, draggable, parent }) => (
 
       )}
       {parent && (
-        id === 'device-2' ? <ManageLamp /> : <Outlet />
+        id === 'device-2' ? <ManageLamp /> : <ManageOutlet />
 
       )}
     </div>
