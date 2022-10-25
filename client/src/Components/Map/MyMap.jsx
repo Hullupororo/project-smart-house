@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
@@ -7,10 +8,10 @@ import './mymap.css';
 
 export default function MyMap() {
   const locationPro = useSelector((state) => state.loc);
+
   const [location, setLocation] = useState([]);
   const [myMap, setMyMap] = useState(null);
   const navigate = useNavigate();
-
   useEffect(
     () => {
       ymaps.ready(() => {
@@ -30,40 +31,44 @@ export default function MyMap() {
   // const hardcode = [[55.687086, 37.529789], [55.782392, 37.614924], [55.642063, 37.656123]];
 
   useEffect(() => {
-    const obj = locationPro.map((el) => new ymaps.GeoObject({
+    if (myMap) {
+      const obj = locationPro.map((el) => new ymaps.GeoObject({
       // Описание геометрии.
-      geometry: {
-        type: 'Point',
-        coordinates: [el.dolg, el.shir],
-      },
-      // Свойства.
-      properties: {
+        geometry: {
+          type: 'Point',
+          coordinates: [el.dolg, el.shir],
+        },
+        // Свойства.
+        properties: {
         // Контент метки.
-        iconContent: el.title,
-        hintContent: el.address,
-      },
-      // preset: 'islands#blueHomeIcon',
-      // iconColor: '#272727',
+          iconContent: el.title,
+          hintContent: el.address,
+        },
+        // preset: 'islands#blueHomeIcon',
+        // iconColor: '#272727',
 
-    }, {
+      }, {
       // Опции.
       // Иконка метки будет растягиваться под размер ее содержимого.
-      preset: 'islands#blueHomeIcon',
-      iconColor: '#272727',
-      // Метку можно перемещать.
-      draggable: false,
-    }));
-    setLocation(obj);
-  }, [ymaps.GeoObject]);
+        preset: 'islands#blueHomeIcon',
+        iconColor: '#272727',
+        // Метку можно перемещать.
+        draggable: false,
+      }));
+      setLocation(obj);
+    }
+  }, [locationPro, myMap]);
 
-  // useEffect(() => {
-
-  // }, [locationPro]);
-
-  if (myMap) {
-    location?.map((el) => myMap.geoObjects
-      .add(el));
-  }
+  useEffect(() => {
+    if (location[0]) {
+      myMap.geoObjects.removeAll();
+      location?.map((el) => {
+        myMap.geoObjects.add(el);
+      });
+    }
+  }, [location]);
+  // if (location) {
+  // }
   // console.log(location, myMap);
 
   return (
