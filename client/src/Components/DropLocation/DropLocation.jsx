@@ -19,7 +19,7 @@ export default function DropLocation() {
   const clickHandler = (e, inputPro) => {
     e.preventDefault();
     dispatch(addLocation(inputPro));
-    navigate('/locations');
+    navigate('/');
   };
   useEffect(() => { setInput((prev) => ({ ...prev, rooms: check })); }, [check]);
 

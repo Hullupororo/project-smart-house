@@ -19,7 +19,9 @@ const locSlice = createSlice({
   },
 });
 
-export const { setLoc, addLoc, deleteLoc } = locSlice.actions;
+export const {
+  setLoc, addLoc, deleteLoc,
+} = locSlice.actions;
 export default locSlice.reducer;
 
 export const getLoc = () => (dispatch) => {

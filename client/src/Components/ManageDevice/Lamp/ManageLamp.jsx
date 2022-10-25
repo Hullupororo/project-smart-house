@@ -34,6 +34,5 @@ export default function ManageLamp() {
         <LampColorPicker />
       </div>
     </div>
-
   );
 }
