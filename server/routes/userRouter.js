@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.post('/registration', async (req, res) => {
   const { name, email, password } = req.body;
-  console.log(req.body);
   if (name && email && password) {
     try {
       const [user, created] = await User.findOrCreate({
@@ -19,18 +18,18 @@ router.post('/registration', async (req, res) => {
         req.session.user = sessionUser;
         return res.json(sessionUser);
       }
-      return res.sendStatus(401);
+      console.log('we are here');
+      return res.json({ error: 'Incorrect email or password' });
     } catch (e) {
       console.log(e);
       return res.sendStatus(500);
     }
   }
-  return res.sendStatus(500);
+  return res.json({ error: 'Please fill out fields' });
 });
 
 router.post('/authorization', async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
   if (email && password) {
     try {
       const user = await User.findOne({
@@ -42,20 +41,20 @@ router.post('/authorization', async (req, res) => {
         req.session.user = sessionUser;
         return res.json(sessionUser);
       }
-      return res.sendStatus(401);
+      return res.json({ error: 'Incorrect email or password' });
     } catch (e) {
       console.log(e);
       return res.sendStatus(500);
     }
   }
-  return res.sendStatus(500);
+  return res.json({ error: 'Please fill out fields' });
 });
 
 router.post('/check', (req, res) => {
   if (req.session.user) {
     return res.json(req.session.user);
   }
-  return res.sendStatus(401);
+  return res.json({});
 });
 
 router.get('/logout', (req, res) => {

@@ -24,23 +24,22 @@ function handleClick() {
 
 export default function ManageLamp() {
   return (
-  // <Connector brokerUrl="mqtt://192.168.2.155:1883">
     <div className="DashaProX">
       <div>
+        <h5>On / Off</h5>
         <label className="switch">
           <input type="checkbox" onClick={() => handleClick()} />
           <div>
             <span />
           </div>
         </label>
-      </div>
-      <div>
-        <LampColorPicker />
-      </div>
-      <div>
+        <h5>Brightness</h5>
         <LampSlider />
       </div>
+      <div>
+        <h5>Change Color</h5>
+        <LampColorPicker />
+      </div>
     </div>
-  // </Connector>
   );
 }

@@ -9,7 +9,7 @@ import { getLoc } from '../../app/slices/locSlice';
 import OneLocation from './OneLocation';
 import MyMap from '../Map/MyMap';
 import './oneLocation.css';
-import searchSagaWatcher from '../../app/sagas/searchSaga';
+import { getSearchSaga } from '../../app/actions/searchActions';
 
 export default function MainPage() {
   const [search, setSearch] = useState('');
@@ -29,12 +29,15 @@ export default function MainPage() {
     dispatch(setModal(oneLoc));
   };
   const searchHandler = (e) => {
+    e.preventDefault();
     setSearch(e.target.value);
   };
   useEffect(() => {
-    if (search.length) {
+    if (search) {
       console.log(search);
-      dispatch(searchSagaWatcher(search));
+      dispatch(getSearchSaga(search.toLowerCase()));
+    } else {
+      dispatch(getLoc());
     }
   }, [search]);
 
@@ -55,7 +58,6 @@ export default function MainPage() {
               value={search}
             />
             <label htmlFor="name" className="labelSearch">search</label>
-            <button className="button-54 button-54ProMaxGeniusPlus" type="submit">search</button>
           </div>
         </form>
         {location.map((loc) => (

@@ -83,10 +83,12 @@ margin: auto;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 .labelSearch{
   position: absolute;
-  top: 10%;
+  top: 20%;
   display: block;
   transition: 0.2s;
   font-size: 1.2rem;
