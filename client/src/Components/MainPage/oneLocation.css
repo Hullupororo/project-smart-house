@@ -75,6 +75,73 @@
   width: 10%
 }
 
+
+}
+.button-54ProMaxGeniusPlus{
+  margin-top: 20px;
+  width: 130px;
+}
+.formSearch{
+width: 400px;
+}
+.searchInput{
+    position: relative;
+  padding-top: 35px;
+margin: auto;
+  width: 100%;
+}
+.searchField{
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.labelSearch{
+  position: absolute;
+  top: 20%;
+  display: block;
+  transition: 0.2s;
+  font-size: 1.2rem;
+  color: #9b9b9b;
+}
+
+.searchField::placeholder {
+  color: transparent;
+}
+.searchField:placeholder-shown ~ .labelLoc {
+  font-size: 1.2rem;
+  cursor: text;
+  top: 15px;
+}
+
+.searchField:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to left, #f8f3da, #fddb3a);
+  border-image-slice: 1;
+}
+.searchField:focus ~ .labelLoc {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #e4ca49;
+  font-weight: 700;
+}
+
+/* reset input */
+.searchField:required, .searchField:invalid {
+  box-shadow: none;
+}
 .manageLoc {
 text-decoration: none;
 color: #000;
