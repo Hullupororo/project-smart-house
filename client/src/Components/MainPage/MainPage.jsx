@@ -31,7 +31,10 @@ export default function MainPage() {
     <Container className="newClassDasha">
 
       <div className="cards">
-        <button className="button-54 button-54ProMaxGenius" type="button" onClick={addLoc}>Add location</button>
+        <div className="KirillTheBest">
+
+          <button className="button-54 button-54ProMaxGenius" type="button" onClick={addLoc}>Add location</button>
+        </div>
         {location.map((loc) => (
           <OneLocation key={loc.id} loc={loc} modalHandler={modalHandler} />
         ))}

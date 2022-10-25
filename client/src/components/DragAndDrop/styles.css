@@ -4,9 +4,12 @@
   
   .flex {
     display: flex;
+    flex-direction: column;
+    margin-left: 80px;
   }
   .flex * {
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    
   }
   
   .drag-item {
@@ -51,14 +54,17 @@
     border-color: #fff;
     border-style: solid;
   }
+  /* .white-text {
+    color: white;
+  } */
   
   .drag-drop {
     display: inline-block;
     min-width: 40px;
     padding: 2em 0.5em;
   
-    color: #fff;
-    background-color: #29e;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     border: solid 2px #fff;
   
     -webkit-transform: translate(0px, 0px);
