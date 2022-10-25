@@ -136,3 +136,8 @@ color: #000;
   justify-content: space-evenly;
 
 }
+
+.logoLamp {
+  display: flex;
+  align-items: normal !important;
+}

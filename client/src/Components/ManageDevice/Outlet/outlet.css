@@ -1,0 +1,33 @@
+.outletSettings {
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+
+/* .DashaProMax {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+} */
+
+.header {
+    margin-bottom: 3%;
+font-size: 30px;
+color: rgb(69, 69, 69);
+font-weight: bold;
+}
+
+.forMargin {
+    margin-bottom: 24%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: xx-large;
+    margin-bottom: 3%;
+}
