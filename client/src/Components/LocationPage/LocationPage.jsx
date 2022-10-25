@@ -31,36 +31,14 @@ export default function LocationPage() {
   };
   return (
     <>
-      <div className="sidebar">
+      {/* <div className="sidebar">
         {rooms?.map((room) => (
           <div className="link" onClick={() => deviceHandler(room.id)}>
             <div className={`text ${room.id}`}>{room.title}</div>
           </div>
         ))}
-      </div>
+      </div> */}
       <DraggableGroups />
-
-      <div className="newCont">
-
-        <div className="addDevice">
-          <p>add devices</p>
-        </div>
-        <div className="deviceField">
-          {/* {devices?.map((device) => (
-            <div className="fields">{device.title}</div>
-          ))} */}
-          {/* {devices.length ? (
-            ''
-          ) : ( */}
-          <div className="fields">
-            <ManageLamp />
-          </div>
-          <div className="fields" />
-          <div className="fields" />
-          <div className="fields" />
-          {/* )} */}
-        </div>
-      </div>
     </>
 
   );

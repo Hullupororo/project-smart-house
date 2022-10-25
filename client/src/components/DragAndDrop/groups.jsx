@@ -26,6 +26,7 @@ import DeviceItem from './TestCard/DeviceItem';
 import './LocationPage.css';
 import Outlet from './TestCard/Outlet';
 import ManageLamp from '../../Components/ManageDevice/Lamp/ManageLamp';
+import { useSelector } from 'react-redux';
 
 function Hero({ children }) {
   return <div>{children}</div>;
@@ -383,7 +384,9 @@ function DropZoneDemo() {
       { id: `Room-${Math.random().toString(36).substring(2, 5)}` },
     ]);
   }
-  const rooms = [1, 2, 3, 4];
+  // const rooms = [1, 2, 3, 4];
+  const rooms = useSelector((state) => state.room);
+
   return (
     <>
       <div className="sidebar">
