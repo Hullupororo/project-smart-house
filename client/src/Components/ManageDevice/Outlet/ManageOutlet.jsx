@@ -8,7 +8,7 @@ export default function ManageOutlet() {
       <div className="outletSettings">
         <div className="logo">
           <RiOutlet2Fill />
-          <h3 className="header">Outlet</h3>
+          <h3 className="header">Stock</h3>
         </div>
         <div>
           <h5 className="forMargin">On / Off</h5>
