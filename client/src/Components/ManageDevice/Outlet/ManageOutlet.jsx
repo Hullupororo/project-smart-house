@@ -3,6 +3,9 @@ import './outlet.css';
 import { RiOutlet2Fill } from 'react-icons/ri';
 
 export default function ManageOutlet() {
+  function handleClick() {
+    fetch('http://localhost:3001/dev/outleton');
+  }
   return (
     <div className="DashaProMax">
       <div className="outletSettings">
@@ -13,7 +16,7 @@ export default function ManageOutlet() {
         <div>
           <h5 className="forMargin">On / Off</h5>
           <label className="switch">
-            <input type="checkbox" />
+            <input type="checkbox" onClick={() => handleClick()} />
             <div>
               <span />
             </div>
