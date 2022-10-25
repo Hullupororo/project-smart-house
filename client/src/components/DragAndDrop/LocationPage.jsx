@@ -20,10 +20,11 @@ export default function LocationPage() {
   }, []);
   const deviceHandler = (roomId) => {
     const arrOfRooms = document.getElementsByClassName('text');
+    console.log(arrOfRooms);
     for (const room of arrOfRooms) {
       room.style = 'color: white; font-weight: 400';
     }
-    dispatch(getDevice(roomId));
+    // dispatch(getDevice(roomId));
     document.getElementsByClassName(`text ${roomId}`)[0].style = 'color: #fddb3a; font-weight: 600';
   };
   return (
