@@ -3,13 +3,16 @@ import { Button, Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteLocation } from '../../app/slices/locSlice';
 import { setModal } from '../../app/slices/modalSlice';
+import { setState } from '../../app/slices/stateSlice';
 import './MyModal.css';
 
 export default function MyModal() {
   const dispatch = useDispatch();
   const modal = useSelector((state) => state.modal);
+
   const deleteHandler = () => {
     dispatch(deleteLocation(modal));
+    dispatch(setState());
     dispatch(setModal(null));
   };
   return (
