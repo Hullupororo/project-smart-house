@@ -63,17 +63,7 @@ margin: auto;
     box-shadow: none;
   }
   
-  /* demo */
-  /* body {
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-size: 1.5rem;
-    background-color: #222222;
-  } */
+
 
 
 .drops {text-decoration : none; color : #2d2f31;   font-family: "Montserrat", sans-serif;}
@@ -137,7 +127,9 @@ margin: auto;
 
 #touch {position: absolute; opacity: 0; height: 0px;}    
 
-#touch:checked + .slide {height: 370px;} 
+/* #touch:checked + .slide {height: 370px;}  */
+#touch:checked + .slide {height: 430px;} 
+
 .drops{
     display: flex;
     justify-content: space-between;

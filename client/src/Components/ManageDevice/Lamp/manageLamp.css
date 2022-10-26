@@ -104,8 +104,9 @@
   }
   .DashaProX {
     display: flex;
-
+/* border-bottom: 1px solid; */
     flex-direction: row;
+    margin-bottom: 3%;
     /* justify-content: space-between; */
 /* justify-content: flex-end; */
 

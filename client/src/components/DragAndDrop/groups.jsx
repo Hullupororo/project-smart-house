@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-param-reassign */
@@ -226,7 +227,10 @@ function useDropZone(className, onDrop, onLeave, onEnter, onDeactivate) {
         event.target.classList.remove(styles.dropzone);
         event.target.classList.remove(styles.draggable);
         // document.getElementById('text-changed').classList.add('text-change');
-        event.target.classList.add('white-text');
+        // event.target.classList.add('white-text');
+        if (document.getElementsByClassName(styles.dropzone).length < 1) {
+          document.getElementById('unique').classList.add('white-text');
+        }
 
         event.relatedTarget.classList.remove(styles.draggable);
         if (onDrop) {
@@ -387,13 +391,21 @@ function DropZoneDemo() {
   }
   // const rooms = [1, 2, 3, 4];
   const rooms = useSelector((state) => state.room);
+  const deviceHandler = (roomId) => {
+    const arrOfRooms = document.getElementsByClassName('text');
+    for (const room of arrOfRooms) {
+      room.style = 'color: white; font-weight: 400';
+    }
+    // dispatch(getDevice(roomId));
+    document.getElementsByClassName(`text ${roomId}`)[0].style = 'color: #fddb3a; font-weight: 600';
+  };
 
   return (
     <>
       <div className="sidebar">
         {rooms?.map((room) => (
-          <div className="link">
-            <div className="text">{room.title}</div>
+          <div className="link" onClick={() => deviceHandler(room.id)}>
+            <div className={`text ${room.id}`}>{room.title}</div>
           </div>
         ))}
       </div>
@@ -407,6 +419,7 @@ function DropZoneDemo() {
       <EqualColumn>
         <div className={styles.dragdropdemo}>
           <div className="alldrag">
+            <h3 id="unique">Drag to manage</h3>
             <Draggables elements={draggables} />
           </div>
           <Droppables elements={droppables} draggables={draggables} />

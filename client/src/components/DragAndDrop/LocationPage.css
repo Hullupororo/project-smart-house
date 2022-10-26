@@ -1,17 +1,12 @@
-/* html, body{
-   padding:0px;
-   margin:0px;
-   font-family: 'Raleway', sans-serif;
-   color:#FFF;
-   height:100%;
-}
-body{
-   background:rgba(0, 0, 0, 0.5); 
-} */
 .alldrag {
-   margin-left: 100px;
+   /* margin-left: 100px; */
     display: flex;
     margin-bottom: 50px;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 55%;
+    margin-top: 1%;
+    margin-left: 17%;
 
 }
 .sidebar{

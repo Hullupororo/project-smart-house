@@ -21,13 +21,20 @@ function MyNavBar() {
 
           <>
             <div className="title">
-              <Link to="/">smarthouse</Link>
+              {user.email === 'tapac@tapac'
+                ? (
+                  <a href="/platformer/index.html">
+                    <img src="/platformer/data/img/mushroom.png" alt="" style={{ width: '30px' }} />
+                  </a>
+                ) : (
+                  <Link to="/">smarthouse</Link>
+                )}
             </div>
             {/* <div className="title">
               <Link to="/">device</Link>
             </div> */}
             <div className="title">
-              <Link to="/locations">Home</Link>
+              <Link to="/">Home</Link>
             </div>
             <div className="title">
               <Link to="/" onClick={logoutHandler}>logout</Link>

@@ -5,6 +5,30 @@ const mqtt = require('mqtt');
 
 const router = express.Router();
 
+
+router.get('/funconbot', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Lampa/set', '{"state": "ON"}');
+      }
+    });
+  });
+  res.sendStatus(200);
+});
+
+router.get('/funcoffbot', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Lampa/set', '{"state": "OFF"}');
+      }
+    });
+  });
+  res.sendStatus(200);
+
 router.get('/sub', (req, res) => {
   const client = mqtt.connect('mqtt://192.168.2.155:1883');
   client.on('connect', () => {
@@ -17,6 +41,7 @@ router.get('/sub', (req, res) => {
   client.on('message', (topic, payload) => {
     console.log('Received Message:', topic, JSON.parse(payload.toString()).contact);
   });
+
 });
 
 router.get('/funcon', (req, res) => {
@@ -61,6 +86,28 @@ router.get('/outleton', (req, res) => {
     client.subscribe('presence', (err) => {
       if (!err) {
         client.publish('zigbee2mqtt/Outlet/set', '{"state": "TOGGLE"}');
+      }
+    });
+  });
+  res.sendStatus(200);
+});
+router.get('/outletonbot', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Outlet/set', '{"state": "ON"}');
+      }
+    });
+  });
+  res.sendStatus(200);
+});
+router.get('/outletoffbot', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Outlet/set', '{"state": "OFF"}');
       }
     });
   });
