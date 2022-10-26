@@ -12,7 +12,7 @@ import SignUp from './Components/Auth/signup/SignUp';
 import Login from './Components/Auth/login/Login';
 import { userCheck } from './app/slices/userSlice';
 import GuestPage from './Components/GuestPage/GuestPage';
-import DragAndDrop from './components/DragAndDrop/DragAndDrop';
+import DragAndDrop from './Components/DragAndDrop/DragAndDrop';
 import DropLocation from './Components/DropLocation/DropLocation';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
