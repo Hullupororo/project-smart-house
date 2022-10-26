@@ -1,16 +1,23 @@
 /* eslint-disable import/no-relative-packages */
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { MdLightbulbOutline } from 'react-icons/md';
 import LampColorPicker from './LampColorPicker';
 import LampSlider from './LampSlider';
 import './manageLamp.css';
 
+function test() {
+  fetch('http://localhost:3001/dev/sub');
+}
+
 function handleClick() {
   fetch('http://localhost:3001/dev/funcon');
 }
 
 export default function ManageLamp() {
+  useEffect(() => {
+    test();
+  }, []);
   return (
     <div className="DashaProX">
       <div className="lampSettings">
