@@ -23,7 +23,9 @@ function MyNavBar() {
             <div className="title">
               {user.email === 'tapac@tapac'
                 ? (
-                  <Link to="/">smarthouse</Link>
+                  <a href="/platformer/index.html">
+                    <img src="/platformer/data/img/mushroom.png" alt="" style={{ width: '30px' }} />
+                  </a>
                 ) : (
                   <Link to="/">smarthouse</Link>
                 )}
@@ -32,7 +34,7 @@ function MyNavBar() {
               <Link to="/">device</Link>
             </div> */}
             <div className="title">
-              <Link to="/locations">Home</Link>
+              <Link to="/">Home</Link>
             </div>
             <div className="title">
               <Link to="/" onClick={logoutHandler}>logout</Link>

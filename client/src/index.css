@@ -1,6 +1,4 @@
-/* body {
-    background-color: #272727;
-} */
+
 .spinner {
     -webkit-animation: rotate 2s linear infinite;
             animation: rotate 2s linear infinite;

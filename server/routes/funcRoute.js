@@ -5,6 +5,30 @@ const mqtt = require('mqtt');
 
 const router = express.Router();
 
+router.get('/funconbot', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Lampa/set', '{"state": "ON"}');
+      }
+    });
+  });
+  res.sendStatus(200);
+});
+
+router.get('/funcoffbot', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Lampa/set', '{"state": "OFF"}');
+      }
+    });
+  });
+  res.sendStatus(200);
+});
+
 router.get('/funcon', (req, res) => {
   const client = mqtt.connect('mqtt://192.168.2.155:1883');
   client.on('connect', () => {

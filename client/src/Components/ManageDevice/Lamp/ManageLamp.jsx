@@ -19,7 +19,7 @@ export default function ManageLamp() {
           <h3 className="header">Lamp</h3>
         </div>
 
-        <h5>On / Off</h5>
+        <h5>Off / On</h5>
         <label className="switch">
           <input type="checkbox" onClick={() => handleClick()} />
           <div>
