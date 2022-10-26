@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/locations', async (req, res) => {
   // const loations = await Location.findAll({ order: [['id', 'DESC']] });
-  const loations = await Location.findAll();
+  const loations = await Location.findAll({ where: { user_id: req.session.user.id } });
 
   res.json(loations);
 });
