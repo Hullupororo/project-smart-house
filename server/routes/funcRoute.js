@@ -76,5 +76,27 @@ router.get('/outleton', (req, res) => {
   });
   res.sendStatus(200);
 });
+router.get('/outletonbot', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Outlet/set', '{"state": "ON"}');
+      }
+    });
+  });
+  res.sendStatus(200);
+});
+router.get('/outletoffbot', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('presence', (err) => {
+      if (!err) {
+        client.publish('zigbee2mqtt/Outlet/set', '{"state": "OFF"}');
+      }
+    });
+  });
+  res.sendStatus(200);
+});
 
 module.exports = router;
