@@ -5,6 +5,7 @@ const mqtt = require('mqtt');
 
 const router = express.Router();
 
+
 router.get('/funconbot', (req, res) => {
   const client = mqtt.connect('mqtt://192.168.2.155:1883');
   client.on('connect', () => {
@@ -27,6 +28,20 @@ router.get('/funcoffbot', (req, res) => {
     });
   });
   res.sendStatus(200);
+
+router.get('/sub', (req, res) => {
+  const client = mqtt.connect('mqtt://192.168.2.155:1883');
+  client.on('connect', () => {
+    client.subscribe('zigbee2mqtt/Doordatchik', (err) => {
+      if (!err) {
+        console.log('Подписка прошла');
+      }
+    });
+  });
+  client.on('message', (topic, payload) => {
+    console.log('Received Message:', topic, JSON.parse(payload.toString()).contact);
+  });
+
 });
 
 router.get('/funcon', (req, res) => {
