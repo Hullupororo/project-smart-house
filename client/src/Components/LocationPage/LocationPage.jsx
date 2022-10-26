@@ -21,6 +21,11 @@ export default function LocationPage() {
   useEffect(() => {
     dispatch(getRoom(id));
   }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/dev/sub');
+  }, []);
+
   const deviceHandler = (roomId) => {
     const arrOfRooms = document.getElementsByClassName('text');
     for (const room of arrOfRooms) {

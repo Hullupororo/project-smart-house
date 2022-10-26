@@ -23,7 +23,6 @@ const start = async () => {
 
     try {
       if (text === '/start') {
-        // return bot.sendMessage(chatId, 'Welcome to Smart House. Choose one of the following commands in Menu ');
         return bot.sendMessage(msg.chat.id, 'Welcome to Smart House. Choose one of the following commands in Menu', {
           reply_markup: {
             keyboard: [['Turn Lamp On', 'Turn Lamp Off'], ['Turn Socket On', 'Turn Socket Off']],

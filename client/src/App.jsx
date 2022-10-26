@@ -18,9 +18,11 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(userCheck());
   }, []);
+
   const user = useSelector((state) => state.user);
   return (
     <>

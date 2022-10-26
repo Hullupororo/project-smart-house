@@ -6,18 +6,11 @@ import LampColorPicker from './LampColorPicker';
 import LampSlider from './LampSlider';
 import './manageLamp.css';
 
-function test() {
-  fetch('http://localhost:3001/dev/sub');
-}
-
 function handleClick() {
   fetch('http://localhost:3001/dev/funcon');
 }
 
 export default function ManageLamp() {
-  useEffect(() => {
-    test();
-  }, []);
   return (
     <div className="DashaProX">
       <div className="lampSettings">
